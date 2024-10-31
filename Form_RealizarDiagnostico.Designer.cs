@@ -1,6 +1,6 @@
 ﻿namespace BombaInjetora
 {
-    partial class Form_RealizarDiag
+    partial class Form_RealizarDiagnostico
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RealizarDiag));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RealizarDiagnostico));
             panel8 = new Panel();
+            btnIniciarDiag = new Button();
             panelTestes = new Panel();
-            panel23 = new Panel();
-            btnTodos = new Button();
             panel22 = new Panel();
             btnPlenaCarga = new Button();
             panel21 = new Panel();
@@ -47,23 +46,22 @@
             panel10 = new Panel();
             panel16 = new Panel();
             menuStrip1 = new MenuStrip();
-            toolStripMenuItem4 = new ToolStripMenuItem();
-            bOSCHToolStripMenuItem = new ToolStripMenuItem();
-            dELPHIToolStripMenuItem = new ToolStripMenuItem();
-            cATERPILLARToolStripMenuItem = new ToolStripMenuItem();
-            sIEMENSToolStripMenuItem = new ToolStripMenuItem();
-            mODELOToolStripMenuItem = new ToolStripMenuItem();
+            menuModelos = new ToolStripMenuItem();
+            boshModelo = new ToolStripMenuItem();
+            delphiModelo = new ToolStripMenuItem();
+            caterpillarModelo = new ToolStripMenuItem();
+            siemensModelo = new ToolStripMenuItem();
             label3 = new Label();
             panel9 = new Panel();
             panel11 = new Panel();
             panel15 = new Panel();
-            button7 = new Button();
+            btnQuatro = new Button();
             panel14 = new Panel();
-            button6 = new Button();
+            btnTres = new Button();
             panel13 = new Panel();
-            button5 = new Button();
+            btnDois = new Button();
             panel12 = new Panel();
-            button4 = new Button();
+            btnUm = new Button();
             lbnNomeOperador = new Label();
             label2 = new Label();
             panel1 = new Panel();
@@ -77,18 +75,30 @@
             btnConfigDiagnostico = new Button();
             panel5 = new Panel();
             btnHistorico = new Button();
-            panel3 = new Panel();
-            btnConfig = new Button();
             panel6 = new Panel();
             panel7 = new Panel();
             btnTrocarOperador = new Button();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            cUMMINSISBToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
+            VE075Modelo = new ToolStripMenuItem();
+            aLTAPRESSÃO0261520461ToolStripMenuItem = new ToolStripMenuItem();
+            aLTAPRESSÃO0445010320ToolStripMenuItem = new ToolStripMenuItem();
+            aLTAPRESSÃO0261520216ToolStripMenuItem = new ToolStripMenuItem();
+            aLTAPRESSÃO0445020002ToolStripMenuItem = new ToolStripMenuItem();
+            a700XToolStripMenuItem = new ToolStripMenuItem();
+            dP310ToolStripMenuItem = new ToolStripMenuItem();
+            v8860A080ToolStripMenuItem = new ToolStripMenuItem();
+            aV3340F401GToolStripMenuItem = new ToolStripMenuItem();
+            v3248F850ToolStripMenuItem = new ToolStripMenuItem();
+            voltFuelTransferPumpToolStripMenuItem = new ToolStripMenuItem();
+            vOLTELECTRICFUELPUMPToolStripMenuItem = new ToolStripMenuItem();
+            pUMPFUELINToolStripMenuItem = new ToolStripMenuItem();
+            wS40019ToolStripMenuItem = new ToolStripMenuItem();
+            fE073ToolStripMenuItem = new ToolStripMenuItem();
+            c1EToolStripMenuItem = new ToolStripMenuItem();
+            cavModelo = new ToolStripMenuItem();
+            pERKINS6357ToolStripMenuItem = new ToolStripMenuItem();
+            fORDF4000ToolStripMenuItem = new ToolStripMenuItem();
             panel8.SuspendLayout();
             panelTestes.SuspendLayout();
-            panel23.SuspendLayout();
             panel22.SuspendLayout();
             panel21.SuspendLayout();
             panel20.SuspendLayout();
@@ -109,58 +119,47 @@
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
-            panel3.SuspendLayout();
             panel7.SuspendLayout();
             SuspendLayout();
             // 
             // panel8
             // 
             panel8.BackColor = SystemColors.ButtonFace;
+            panel8.Controls.Add(btnIniciarDiag);
             panel8.Controls.Add(panelTestes);
             panel8.Controls.Add(panel10);
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(label2);
-            panel8.Location = new Point(368, 62);
+            panel8.Location = new Point(368, 57);
             panel8.Name = "panel8";
             panel8.Size = new Size(673, 469);
-            panel8.TabIndex = 19;
-            panel8.Paint += panel8_Paint;
+            panel8.TabIndex = 22;
+            // 
+            // btnIniciarDiag
+            // 
+            btnIniciarDiag.BackColor = Color.Yellow;
+            btnIniciarDiag.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnIniciarDiag.Location = new Point(286, 406);
+            btnIniciarDiag.Name = "btnIniciarDiag";
+            btnIniciarDiag.Size = new Size(117, 39);
+            btnIniciarDiag.TabIndex = 35;
+            btnIniciarDiag.Text = "Iniciar";
+            btnIniciarDiag.UseVisualStyleBackColor = false;
+            btnIniciarDiag.Click += btnIniciarDiag_Click;
             // 
             // panelTestes
             // 
             panelTestes.BackColor = SystemColors.ScrollBar;
-            panelTestes.Controls.Add(panel23);
             panelTestes.Controls.Add(panel22);
             panelTestes.Controls.Add(panel21);
             panelTestes.Controls.Add(panel20);
             panelTestes.Controls.Add(panel19);
             panelTestes.Controls.Add(panel18);
             panelTestes.Controls.Add(label1);
-            panelTestes.Location = new Point(62, 109);
+            panelTestes.Location = new Point(62, 92);
             panelTestes.Name = "panelTestes";
             panelTestes.Size = new Size(271, 294);
             panelTestes.TabIndex = 32;
-            // 
-            // panel23
-            // 
-            panel23.Controls.Add(btnTodos);
-            panel23.Location = new Point(135, 12);
-            panel23.Name = "panel23";
-            panel23.Size = new Size(101, 31);
-            panel23.TabIndex = 23;
-            // 
-            // btnTodos
-            // 
-            btnTodos.FlatAppearance.BorderColor = Color.FromArgb(192, 0, 0);
-            btnTodos.FlatAppearance.BorderSize = 100;
-            btnTodos.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTodos.Location = new Point(-45, -12);
-            btnTodos.Name = "btnTodos";
-            btnTodos.Size = new Size(192, 56);
-            btnTodos.TabIndex = 23;
-            btnTodos.Text = "Todos";
-            btnTodos.UseVisualStyleBackColor = true;
-            btnTodos.Click += btnSelecionarTodos_Click;
             // 
             // panel22
             // 
@@ -263,7 +262,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(17, 10);
+            label1.Location = new Point(22, 14);
             label1.Name = "label1";
             label1.Size = new Size(67, 23);
             label1.TabIndex = 20;
@@ -274,7 +273,7 @@
             panel10.BackColor = SystemColors.ScrollBar;
             panel10.Controls.Add(panel16);
             panel10.Controls.Add(label3);
-            panel10.Location = new Point(350, 109);
+            panel10.Location = new Point(350, 92);
             panel10.Name = "panel10";
             panel10.Size = new Size(276, 106);
             panel10.TabIndex = 31;
@@ -293,57 +292,55 @@
             menuStrip1.BackColor = SystemColors.ButtonHighlight;
             menuStrip1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem4 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuModelos });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(160, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            menuStrip1.ItemClicked += menuModelos_ItemClicked;
             // 
-            // toolStripMenuItem4
+            // menuModelos
             // 
-            toolStripMenuItem4.DropDownItems.AddRange(new ToolStripItem[] { bOSCHToolStripMenuItem, dELPHIToolStripMenuItem, cATERPILLARToolStripMenuItem, sIEMENSToolStripMenuItem, mODELOToolStripMenuItem });
-            toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(90, 24);
-            toolStripMenuItem4.Text = "MODELO";
+            menuModelos.DropDownItems.AddRange(new ToolStripItem[] { boshModelo, delphiModelo, caterpillarModelo, siemensModelo, cavModelo });
+            menuModelos.Name = "menuModelos";
+            menuModelos.Size = new Size(90, 24);
+            menuModelos.Text = "MODELO";
             // 
-            // bOSCHToolStripMenuItem
+            // boshModelo
             // 
-            bOSCHToolStripMenuItem.Name = "bOSCHToolStripMenuItem";
-            bOSCHToolStripMenuItem.Size = new Size(185, 26);
-            bOSCHToolStripMenuItem.Text = "BOSCH";
+            boshModelo.DropDownItems.AddRange(new ToolStripItem[] { VE075Modelo, aLTAPRESSÃO0261520461ToolStripMenuItem, aLTAPRESSÃO0445010320ToolStripMenuItem, aLTAPRESSÃO0261520216ToolStripMenuItem, aLTAPRESSÃO0445020002ToolStripMenuItem });
+            boshModelo.Name = "boshModelo";
+            boshModelo.Size = new Size(224, 26);
+            boshModelo.Text = "BOSCH";
             // 
-            // dELPHIToolStripMenuItem
+            // delphiModelo
             // 
-            dELPHIToolStripMenuItem.Name = "dELPHIToolStripMenuItem";
-            dELPHIToolStripMenuItem.Size = new Size(185, 26);
-            dELPHIToolStripMenuItem.Text = "DELPHI";
+            delphiModelo.DropDownItems.AddRange(new ToolStripItem[] { a700XToolStripMenuItem, dP310ToolStripMenuItem, v8860A080ToolStripMenuItem, aV3340F401GToolStripMenuItem, v3248F850ToolStripMenuItem });
+            delphiModelo.Name = "delphiModelo";
+            delphiModelo.Size = new Size(224, 26);
+            delphiModelo.Text = "DELPHI";
             // 
-            // cATERPILLARToolStripMenuItem
+            // caterpillarModelo
             // 
-            cATERPILLARToolStripMenuItem.Name = "cATERPILLARToolStripMenuItem";
-            cATERPILLARToolStripMenuItem.Size = new Size(185, 26);
-            cATERPILLARToolStripMenuItem.Text = "CATERPILLAR";
+            caterpillarModelo.DropDownItems.AddRange(new ToolStripItem[] { voltFuelTransferPumpToolStripMenuItem, vOLTELECTRICFUELPUMPToolStripMenuItem, pUMPFUELINToolStripMenuItem });
+            caterpillarModelo.Name = "caterpillarModelo";
+            caterpillarModelo.Size = new Size(224, 26);
+            caterpillarModelo.Text = "CATERPILLAR";
             // 
-            // sIEMENSToolStripMenuItem
+            // siemensModelo
             // 
-            sIEMENSToolStripMenuItem.Name = "sIEMENSToolStripMenuItem";
-            sIEMENSToolStripMenuItem.Size = new Size(185, 26);
-            sIEMENSToolStripMenuItem.Text = "SIEMENS";
-            // 
-            // mODELOToolStripMenuItem
-            // 
-            mODELOToolStripMenuItem.Name = "mODELOToolStripMenuItem";
-            mODELOToolStripMenuItem.Size = new Size(185, 26);
-            mODELOToolStripMenuItem.Text = "CAV";
+            siemensModelo.DropDownItems.AddRange(new ToolStripItem[] { wS40019ToolStripMenuItem, fE073ToolStripMenuItem, c1EToolStripMenuItem });
+            siemensModelo.Name = "siemensModelo";
+            siemensModelo.Size = new Size(224, 26);
+            siemensModelo.Text = "SIEMENS";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(12, 11);
+            label3.Location = new Point(12, 14);
             label3.Name = "label3";
             label3.Size = new Size(198, 23);
             label3.TabIndex = 20;
@@ -354,7 +351,7 @@
             panel9.BackColor = SystemColors.ScrollBar;
             panel9.Controls.Add(panel11);
             panel9.Controls.Add(lbnNomeOperador);
-            panel9.Location = new Point(350, 237);
+            panel9.Location = new Point(350, 220);
             panel9.Name = "panel9";
             panel9.Size = new Size(276, 166);
             panel9.TabIndex = 30;
@@ -369,90 +366,90 @@
             panel11.Name = "panel11";
             panel11.Size = new Size(253, 67);
             panel11.TabIndex = 20;
-            panel11.Paint += panel11_Paint;
             // 
             // panel15
             // 
-            panel15.Controls.Add(button7);
+            panel15.Controls.Add(btnQuatro);
             panel15.Location = new Point(190, 5);
             panel15.Name = "panel15";
             panel15.Size = new Size(53, 56);
             panel15.TabIndex = 1;
             // 
-            // button7
+            // btnQuatro
             // 
-            button7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.Location = new Point(-13, -5);
-            button7.Name = "button7";
-            button7.Size = new Size(76, 67);
-            button7.TabIndex = 33;
-            button7.Text = "4";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += btnTestes_Click;
+            btnQuatro.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnQuatro.Location = new Point(-13, -5);
+            btnQuatro.Name = "btnQuatro";
+            btnQuatro.Size = new Size(76, 67);
+            btnQuatro.TabIndex = 33;
+            btnQuatro.Text = "4";
+            btnQuatro.UseVisualStyleBackColor = true;
+            btnQuatro.Click += btnProvetas_Click;
             // 
             // panel14
             // 
-            panel14.Controls.Add(button6);
+            panel14.Controls.Add(btnTres);
             panel14.Location = new Point(131, 5);
             panel14.Name = "panel14";
             panel14.Size = new Size(53, 56);
             panel14.TabIndex = 1;
             // 
-            // button6
+            // btnTres
             // 
-            button6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.Location = new Point(-12, -5);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 67);
-            button6.TabIndex = 32;
-            button6.Text = "3";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += btnTestes_Click;
+            btnTres.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTres.Location = new Point(-12, -5);
+            btnTres.Name = "btnTres";
+            btnTres.Size = new Size(75, 67);
+            btnTres.TabIndex = 32;
+            btnTres.Text = "3";
+            btnTres.UseVisualStyleBackColor = true;
+            btnTres.Click += btnProvetas_Click;
             // 
             // panel13
             // 
-            panel13.Controls.Add(button5);
+            panel13.Controls.Add(btnDois);
             panel13.Location = new Point(72, 5);
             panel13.Name = "panel13";
             panel13.Size = new Size(53, 56);
             panel13.TabIndex = 1;
             // 
-            // button5
+            // btnDois
             // 
-            button5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(-12, -5);
-            button5.Name = "button5";
-            button5.Size = new Size(79, 67);
-            button5.TabIndex = 32;
-            button5.Text = "2";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += btnTestes_Click;
+            btnDois.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDois.Location = new Point(-12, -5);
+            btnDois.Name = "btnDois";
+            btnDois.Size = new Size(79, 67);
+            btnDois.TabIndex = 32;
+            btnDois.Text = "2";
+            btnDois.UseVisualStyleBackColor = true;
+            btnDois.Click += btnProvetas_Click;
             // 
             // panel12
             // 
-            panel12.Controls.Add(button4);
+            panel12.Controls.Add(btnUm);
             panel12.Location = new Point(13, 5);
             panel12.Name = "panel12";
             panel12.Size = new Size(53, 56);
             panel12.TabIndex = 0;
             // 
-            // button4
+            // btnUm
             // 
-            button4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(-10, -5);
-            button4.Name = "button4";
-            button4.Size = new Size(72, 67);
-            button4.TabIndex = 0;
-            button4.Text = "1";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += btnTestes_Click;
+            btnUm.AccessibleName = "";
+            btnUm.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUm.Location = new Point(-10, -5);
+            btnUm.Name = "btnUm";
+            btnUm.Size = new Size(72, 67);
+            btnUm.TabIndex = 0;
+            btnUm.Text = "1";
+            btnUm.UseVisualStyleBackColor = true;
+            btnUm.Click += btnProvetas_Click;
             // 
             // lbnNomeOperador
             // 
             lbnNomeOperador.AutoSize = true;
             lbnNomeOperador.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbnNomeOperador.ForeColor = SystemColors.ActiveCaptionText;
-            lbnNomeOperador.Location = new Point(12, 12);
+            lbnNomeOperador.Location = new Point(11, 12);
             lbnNomeOperador.Name = "lbnNomeOperador";
             lbnNomeOperador.Size = new Size(88, 23);
             lbnNomeOperador.TabIndex = 19;
@@ -473,10 +470,10 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(btnX);
-            panel1.Location = new Point(-1, -9);
+            panel1.Location = new Point(-1, -14);
             panel1.Name = "panel1";
             panel1.Size = new Size(1116, 47);
-            panel1.TabIndex = 17;
+            panel1.TabIndex = 20;
             // 
             // btnX
             // 
@@ -497,13 +494,12 @@
             flowLayoutPanel1.Controls.Add(panel4);
             flowLayoutPanel1.Controls.Add(panel2);
             flowLayoutPanel1.Controls.Add(panel5);
-            flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(panel6);
             flowLayoutPanel1.Controls.Add(panel7);
-            flowLayoutPanel1.Location = new Point(-1, 36);
+            flowLayoutPanel1.Location = new Point(-1, 31);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(277, 580);
-            flowLayoutPanel1.TabIndex = 18;
+            flowLayoutPanel1.TabIndex = 21;
             // 
             // panel17
             // 
@@ -598,41 +594,19 @@
             btnHistorico.TabIndex = 28;
             btnHistorico.Text = "Histórico de Relatório";
             btnHistorico.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(btnConfig);
-            panel3.Location = new Point(3, 287);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 65);
-            panel3.TabIndex = 27;
-            // 
-            // btnConfig
-            // 
-            btnConfig.BackColor = SystemColors.ButtonFace;
-            btnConfig.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConfig.ForeColor = Color.Black;
-            btnConfig.Image = (Image)resources.GetObject("btnConfig.Image");
-            btnConfig.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConfig.Location = new Point(-38, -38);
-            btnConfig.Name = "btnConfig";
-            btnConfig.Padding = new Padding(55, 0, 0, 0);
-            btnConfig.Size = new Size(312, 144);
-            btnConfig.TabIndex = 22;
-            btnConfig.Text = "Configurações        ";
-            btnConfig.UseVisualStyleBackColor = false;
+            btnHistorico.Click += btnHistorico_Click;
             // 
             // panel6
             // 
-            panel6.Location = new Point(3, 358);
+            panel6.Location = new Point(3, 287);
             panel6.Name = "panel6";
-            panel6.Size = new Size(277, 122);
+            panel6.Size = new Size(277, 196);
             panel6.TabIndex = 28;
             // 
             // panel7
             // 
             panel7.Controls.Add(btnTrocarOperador);
-            panel7.Location = new Point(3, 486);
+            panel7.Location = new Point(3, 489);
             panel7.Name = "panel7";
             panel7.Size = new Size(270, 65);
             panel7.TabIndex = 27;
@@ -651,36 +625,124 @@
             btnTrocarOperador.TabIndex = 23;
             btnTrocarOperador.Text = "Trocar Operador   ";
             btnTrocarOperador.UseVisualStyleBackColor = false;
-            btnTrocarOperador.Click += btnTrocarOperador_Click_1;
+            btnTrocarOperador.Click += btnTrocarOperador_Click;
             // 
-            // toolStripMenuItem1
+            // VE075Modelo
             // 
-            toolStripMenuItem1.BackColor = SystemColors.ButtonHighlight;
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3 });
-            toolStripMenuItem1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(110, 27);
-            toolStripMenuItem1.Text = "MODELO";
+            VE075Modelo.Name = "VE075Modelo";
+            VE075Modelo.Size = new Size(282, 26);
+            VE075Modelo.Text = "VE 0.75";
             // 
-            // toolStripMenuItem2
+            // aLTAPRESSÃO0261520461ToolStripMenuItem
             // 
-            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { cUMMINSISBToolStripMenuItem });
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(162, 28);
-            toolStripMenuItem2.Text = "BOSCH";
+            aLTAPRESSÃO0261520461ToolStripMenuItem.Name = "aLTAPRESSÃO0261520461ToolStripMenuItem";
+            aLTAPRESSÃO0261520461ToolStripMenuItem.Size = new Size(282, 26);
+            aLTAPRESSÃO0261520461ToolStripMenuItem.Text = "ALTA PRESSÃO 0261520461";
             // 
-            // cUMMINSISBToolStripMenuItem
+            // aLTAPRESSÃO0445010320ToolStripMenuItem
             // 
-            cUMMINSISBToolStripMenuItem.Name = "cUMMINSISBToolStripMenuItem";
-            cUMMINSISBToolStripMenuItem.Size = new Size(348, 28);
-            cUMMINSISBToolStripMenuItem.Text = "0445120007 - CUMMINS ISB";
+            aLTAPRESSÃO0445010320ToolStripMenuItem.Name = "aLTAPRESSÃO0445010320ToolStripMenuItem";
+            aLTAPRESSÃO0445010320ToolStripMenuItem.Size = new Size(282, 26);
+            aLTAPRESSÃO0445010320ToolStripMenuItem.Text = "ALTA PRESSÃO 0445010320";
             // 
-            // toolStripMenuItem3
+            // aLTAPRESSÃO0261520216ToolStripMenuItem
             // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(162, 28);
+            aLTAPRESSÃO0261520216ToolStripMenuItem.Name = "aLTAPRESSÃO0261520216ToolStripMenuItem";
+            aLTAPRESSÃO0261520216ToolStripMenuItem.Size = new Size(282, 26);
+            aLTAPRESSÃO0261520216ToolStripMenuItem.Text = "ALTA PRESSÃO 0261520216 ";
             // 
-            // Form_RealizarDiag
+            // aLTAPRESSÃO0445020002ToolStripMenuItem
+            // 
+            aLTAPRESSÃO0445020002ToolStripMenuItem.Name = "aLTAPRESSÃO0445020002ToolStripMenuItem";
+            aLTAPRESSÃO0445020002ToolStripMenuItem.Size = new Size(282, 26);
+            aLTAPRESSÃO0445020002ToolStripMenuItem.Text = "ALTA PRESSÃO 0445020002 ";
+            // 
+            // a700XToolStripMenuItem
+            // 
+            a700XToolStripMenuItem.Name = "a700XToolStripMenuItem";
+            a700XToolStripMenuItem.Size = new Size(224, 26);
+            a700XToolStripMenuItem.Text = "8523A700X";
+            // 
+            // dP310ToolStripMenuItem
+            // 
+            dP310ToolStripMenuItem.Name = "dP310ToolStripMenuItem";
+            dP310ToolStripMenuItem.Size = new Size(224, 26);
+            dP310ToolStripMenuItem.Text = "DP310";
+            // 
+            // v8860A080ToolStripMenuItem
+            // 
+            v8860A080ToolStripMenuItem.Name = "v8860A080ToolStripMenuItem";
+            v8860A080ToolStripMenuItem.Size = new Size(224, 26);
+            v8860A080ToolStripMenuItem.Text = "V8860A080 ";
+            // 
+            // aV3340F401GToolStripMenuItem
+            // 
+            aV3340F401GToolStripMenuItem.Name = "aV3340F401GToolStripMenuItem";
+            aV3340F401GToolStripMenuItem.Size = new Size(224, 26);
+            aV3340F401GToolStripMenuItem.Text = "AV3340F401G";
+            // 
+            // v3248F850ToolStripMenuItem
+            // 
+            v3248F850ToolStripMenuItem.Name = "v3248F850ToolStripMenuItem";
+            v3248F850ToolStripMenuItem.Size = new Size(224, 26);
+            v3248F850ToolStripMenuItem.Text = "V3248F850";
+            // 
+            // voltFuelTransferPumpToolStripMenuItem
+            // 
+            voltFuelTransferPumpToolStripMenuItem.Name = "voltFuelTransferPumpToolStripMenuItem";
+            voltFuelTransferPumpToolStripMenuItem.Size = new Size(380, 26);
+            voltFuelTransferPumpToolStripMenuItem.Text = "495-0714: 16 VOLT FUEL TRANSFERS PUMP";
+            // 
+            // vOLTELECTRICFUELPUMPToolStripMenuItem
+            // 
+            vOLTELECTRICFUELPUMPToolStripMenuItem.Name = "vOLTELECTRICFUELPUMPToolStripMenuItem";
+            vOLTELECTRICFUELPUMPToolStripMenuItem.Size = new Size(380, 26);
+            vOLTELECTRICFUELPUMPToolStripMenuItem.Text = "370-4008: 12 VOLT ELECTRIC FUEL PUMP ";
+            // 
+            // pUMPFUELINToolStripMenuItem
+            // 
+            pUMPFUELINToolStripMenuItem.Name = "pUMPFUELINToolStripMenuItem";
+            pUMPFUELINToolStripMenuItem.Size = new Size(380, 26);
+            pUMPFUELINToolStripMenuItem.Text = "326-8993: PUMP-FUEL IN ";
+            // 
+            // wS40019ToolStripMenuItem
+            // 
+            wS40019ToolStripMenuItem.Name = "wS40019ToolStripMenuItem";
+            wS40019ToolStripMenuItem.Size = new Size(224, 26);
+            wS40019ToolStripMenuItem.Text = "5WS40019";
+            // 
+            // fE073ToolStripMenuItem
+            // 
+            fE073ToolStripMenuItem.Name = "fE073ToolStripMenuItem";
+            fE073ToolStripMenuItem.Size = new Size(224, 26);
+            fE073ToolStripMenuItem.Text = "FE 073";
+            // 
+            // c1EToolStripMenuItem
+            // 
+            c1EToolStripMenuItem.Name = "c1EToolStripMenuItem";
+            c1EToolStripMenuItem.Size = new Size(224, 26);
+            c1EToolStripMenuItem.Text = "7001106C1E";
+            // 
+            // cavModelo
+            // 
+            cavModelo.DropDownItems.AddRange(new ToolStripItem[] { pERKINS6357ToolStripMenuItem, fORDF4000ToolStripMenuItem });
+            cavModelo.Name = "cavModelo";
+            cavModelo.Size = new Size(224, 26);
+            cavModelo.Text = "CAV";
+            // 
+            // pERKINS6357ToolStripMenuItem
+            // 
+            pERKINS6357ToolStripMenuItem.Name = "pERKINS6357ToolStripMenuItem";
+            pERKINS6357ToolStripMenuItem.Size = new Size(224, 26);
+            pERKINS6357ToolStripMenuItem.Text = "PERKINS 6357";
+            // 
+            // fORDF4000ToolStripMenuItem
+            // 
+            fORDF4000ToolStripMenuItem.Name = "fORDF4000ToolStripMenuItem";
+            fORDF4000ToolStripMenuItem.Size = new Size(224, 26);
+            fORDF4000ToolStripMenuItem.Text = "FORD F4000";
+            // 
+            // Form_RealizarDiagnostico
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -690,13 +752,12 @@
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form_RealizarDiag";
-            Text = "Form_RealizarDiag";
+            Name = "Form_RealizarDiagnostico";
+            Text = "Form_RealizarDiagnostico";
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panelTestes.ResumeLayout(false);
             panelTestes.PerformLayout();
-            panel23.ResumeLayout(false);
             panel22.ResumeLayout(false);
             panel21.ResumeLayout(false);
             panel20.ResumeLayout(false);
@@ -721,7 +782,6 @@
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -729,61 +789,72 @@
         #endregion
 
         private Panel panel8;
+        private Panel panelTestes;
+        private Panel panel22;
+        private Button btnPlenaCarga;
+        private Panel panel21;
+        private Button btnEmissoes;
+        private Panel panel20;
+        private Button btnMarchaLenta;
+        private Panel panel19;
+        private Button btnPreInjecao;
+        private Panel panel18;
+        private Button btnEstanqueidade;
+        private Label label1;
+        private Panel panel10;
+        private Panel panel16;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuModelos;
+        private ToolStripMenuItem boshModelo;
+        private ToolStripMenuItem delphiModelo;
+        private ToolStripMenuItem caterpillarModelo;
+        private ToolStripMenuItem siemensModelo;
+        private Label label3;
+        private Panel panel9;
+        private Panel panel11;
+        private Panel panel15;
+        private Button btnQuatro;
+        private Panel panel14;
+        private Button btnTres;
+        private Panel panel13;
+        private Button btnDois;
+        private Panel panel12;
+        private Button btnUm;
+        private Label lbnNomeOperador;
         private Label label2;
         private Panel panel1;
         private Button btnX;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel17;
+        private Button btnInicio;
         private Panel panel4;
         private Button btnRealizarDiagnostico;
         private Panel panel2;
         private Button btnConfigDiagnostico;
         private Panel panel5;
         private Button btnHistorico;
-        private Panel panel3;
-        private Button btnConfig;
         private Panel panel6;
         private Panel panel7;
         private Button btnTrocarOperador;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem cUMMINSISBToolStripMenuItem;
-        private Panel panel9;
-        private Label lbnNomeOperador;
-        private ToolStripMenuItem toolStripMenuItem3;
-        private Panel panel10;
-        private Label label3;
-        private Panel panel11;
-        private Panel panel15;
-        private Panel panel14;
-        private Panel panel13;
-        private Panel panel12;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Panel panel16;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem4;
-        private ToolStripMenuItem bOSCHToolStripMenuItem;
-        private ToolStripMenuItem dELPHIToolStripMenuItem;
-        private ToolStripMenuItem cATERPILLARToolStripMenuItem;
-        private ToolStripMenuItem sIEMENSToolStripMenuItem;
-        private Panel panelTestes;
-        private Button btnEstanqueidade;
-        private Panel panel22;
-        private Panel panel21;
-        private Panel panel20;
-        private Panel panel19;
-        private Panel panel18;
-        private Label label1;
-        private Panel panel23;
-        private Button btnTodos;
-        private Button btnPlenaCarga;
-        private Button btnEmissoes;
-        private Button btnMarchaLenta;
-        private Button btnPreInjecao;
-        private ToolStripMenuItem mODELOToolStripMenuItem;
-        private Panel panel17;
-        private Button btnInicio;
+        private Button btnIniciarDiag;
+        private ToolStripMenuItem VE075Modelo;
+        private ToolStripMenuItem aLTAPRESSÃO0261520461ToolStripMenuItem;
+        private ToolStripMenuItem aLTAPRESSÃO0445010320ToolStripMenuItem;
+        private ToolStripMenuItem aLTAPRESSÃO0261520216ToolStripMenuItem;
+        private ToolStripMenuItem aLTAPRESSÃO0445020002ToolStripMenuItem;
+        private ToolStripMenuItem a700XToolStripMenuItem;
+        private ToolStripMenuItem dP310ToolStripMenuItem;
+        private ToolStripMenuItem v8860A080ToolStripMenuItem;
+        private ToolStripMenuItem aV3340F401GToolStripMenuItem;
+        private ToolStripMenuItem v3248F850ToolStripMenuItem;
+        private ToolStripMenuItem voltFuelTransferPumpToolStripMenuItem;
+        private ToolStripMenuItem vOLTELECTRICFUELPUMPToolStripMenuItem;
+        private ToolStripMenuItem pUMPFUELINToolStripMenuItem;
+        private ToolStripMenuItem wS40019ToolStripMenuItem;
+        private ToolStripMenuItem fE073ToolStripMenuItem;
+        private ToolStripMenuItem c1EToolStripMenuItem;
+        private ToolStripMenuItem cavModelo;
+        private ToolStripMenuItem pERKINS6357ToolStripMenuItem;
+        private ToolStripMenuItem fORDF4000ToolStripMenuItem;
     }
 }

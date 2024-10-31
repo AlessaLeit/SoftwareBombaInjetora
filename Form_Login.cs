@@ -1,8 +1,12 @@
+using System.Drawing.Text;
+using static BombaInjetora.SessaoOperadorcs;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 namespace BombaInjetora
 {
     public partial class Form_Login : Form
     {
-        private string nomeOperador;
+        
         public Form_Login()
         {
             InitializeComponent();
@@ -13,7 +17,8 @@ namespace BombaInjetora
         {
 
         }
-        private void CarregarOperadoresRecentes() //Preciso corrigir, apenas aparece 1/4 operadores
+
+        private void CarregarOperadoresRecentes() 
         {
             string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
             if (File.Exists(caminhoArquivo))
@@ -34,7 +39,6 @@ namespace BombaInjetora
                         txtOperador.Margin = new Padding(0, 10, 0, 10);
                         txtOperador.Cursor = Cursors.Hand;
 
-                        // Use variável local para capturar o valor correto
                         string nomeCapturado = linhaNome;
                         txtOperador.Click += (s, e) =>
                         {
@@ -53,37 +57,41 @@ namespace BombaInjetora
                 MessageBox.Show("Nenhum cadastro encontrado.");
             }
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        
+            private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 string nome = txtNomeOperador.Text;
                 string senha = txtSenha.Text;
-
+                
                 string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
 
                 if (File.Exists(caminhoArquivo))
                 {
                     string[] linhas = File.ReadAllLines(caminhoArquivo);
                     bool loginValido = false;
+                    string email = string.Empty;
 
-                    for (int i = 0; i < linhas.Length; i += 3) // Pula de 3 em 3 linhas, pois no arquivo eu salvei o cadastro com 3 linhas sobre
+                    for (int i = 0; i < linhas.Length; i += 4)
                     {
-                        string linhaNome = linhas[i].Replace("Nome Operador: ", "").Trim(); // Limpar pra deixar somente o nome/senha
-                        string linhaSenha = linhas[i + 1].Replace("Senha: ", "").Trim();
+                        string linhaNome = linhas[i + 1].Replace("Nome Operador: ", "").Trim(); 
+                        string linhaSenha = linhas[i + 2].Replace("Senha: ", "").Trim();
+                        string linhaEmail = linhas[i].Replace("Email: ", "").Trim();
 
                         if (linhaNome == nome && linhaSenha == senha)
                         {
                             loginValido = true;
-                            nomeOperador = nome;
+                            email = linhaEmail;
                             break;
                         }
                     }
-
+                    
                     if (loginValido)
                     {
-                        var menu = new Form_Home(nomeOperador);
+                        SessaoOperador.Instancia.NomeOperador = nome;
+                        SessaoOperador.Instancia.EmailOperador = email;
+                        var menu = new Form_Home();
                         menu.Show();
 
                         this.Visible = false;

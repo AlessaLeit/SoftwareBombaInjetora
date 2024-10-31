@@ -40,8 +40,6 @@
             btnConfigDiagnostico = new Button();
             panel5 = new Panel();
             btnHistorico = new Button();
-            panel3 = new Panel();
-            btnConfig = new Button();
             panel6 = new Panel();
             panel7 = new Panel();
             btnTrocarOperador = new Button();
@@ -79,7 +77,6 @@
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
-            panel3.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel13.SuspendLayout();
@@ -120,7 +117,6 @@
             flowLayoutPanel1.Controls.Add(panel4);
             flowLayoutPanel1.Controls.Add(panel2);
             flowLayoutPanel1.Controls.Add(panel5);
-            flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(panel6);
             flowLayoutPanel1.Controls.Add(panel7);
             flowLayoutPanel1.Location = new Point(0, 34);
@@ -197,6 +193,7 @@
             btnConfigDiagnostico.TabIndex = 21;
             btnConfigDiagnostico.Text = "Configurar Diagnóstico";
             btnConfigDiagnostico.UseVisualStyleBackColor = false;
+            btnConfigDiagnostico.Click += btnConfigDiagnostico_Click;
             // 
             // panel5
             // 
@@ -220,35 +217,13 @@
             btnHistorico.TabIndex = 28;
             btnHistorico.Text = "Histórico de Relatório";
             btnHistorico.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(btnConfig);
-            panel3.Location = new Point(3, 287);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 65);
-            panel3.TabIndex = 27;
-            // 
-            // btnConfig
-            // 
-            btnConfig.BackColor = SystemColors.ButtonFace;
-            btnConfig.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConfig.ForeColor = Color.Black;
-            btnConfig.Image = (Image)resources.GetObject("btnConfig.Image");
-            btnConfig.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConfig.Location = new Point(-38, -38);
-            btnConfig.Name = "btnConfig";
-            btnConfig.Padding = new Padding(55, 0, 0, 0);
-            btnConfig.Size = new Size(312, 144);
-            btnConfig.TabIndex = 22;
-            btnConfig.Text = "Configurações        ";
-            btnConfig.UseVisualStyleBackColor = false;
+            btnHistorico.Click += btnHistorico_Click;
             // 
             // panel6
             // 
-            panel6.Location = new Point(3, 358);
+            panel6.Location = new Point(3, 287);
             panel6.Name = "panel6";
-            panel6.Size = new Size(277, 135);
+            panel6.Size = new Size(277, 206);
             panel6.TabIndex = 28;
             // 
             // panel7
@@ -545,12 +520,11 @@
             txtBemVindoOperador.AutoSize = true;
             txtBemVindoOperador.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBemVindoOperador.ForeColor = Color.Black;
-            txtBemVindoOperador.Location = new Point(23, 27);
+            txtBemVindoOperador.Location = new Point(23, 32);
             txtBemVindoOperador.Name = "txtBemVindoOperador";
             txtBemVindoOperador.Size = new Size(449, 49);
             txtBemVindoOperador.TabIndex = 27;
             txtBemVindoOperador.Text = "Bem Vindo Operador!";
-            txtBemVindoOperador.Click += txtBemVindoOperador_Click;
             // 
             // Form_Home
             // 
@@ -565,14 +539,12 @@
             Name = "Form_Home";
             Padding = new Padding(25, 0, 0, 0);
             Text = "Form_Home";
-            Load += Form_Home_Load;
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panel17.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
@@ -604,8 +576,6 @@
         private Panel panel2;
         private Panel panel5;
         private Button btnHistorico;
-        private Panel panel3;
-        private Button btnConfig;
         private Panel panel6;
         private Panel panel7;
         private Button btnTrocarOperador;

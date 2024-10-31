@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,33 +23,43 @@ namespace BombaInjetora
         {
             try
             {
+                string email = txtEmail.Text;
                 string nome = txtNomeOperador.Text;
                 string senha = txtSenha.Text;
                 string confirmarSenha = txtConfirmarSenha.Text;
 
-                if (senha != confirmarSenha)
+                // Verificação de email
+                bool VerificarEmail(string email)
                 {
-                    MessageBox.Show("As senha não se coincidem. Tente novamente.");
+                    string padrao = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                    return Regex.IsMatch(email, padrao);
+                }
+
+                if (!VerificarEmail(email))
+                {
+                    MessageBox.Show("Email inválido. Tente novamente.");
                     return;
                 }
-                if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
+
+                if (senha != confirmarSenha)
+                {
+                    MessageBox.Show("As senhas não coincidem. Tente novamente.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
                 {
                     MessageBox.Show("Todos os campos devem ser preenchidos!");
                     return;
                 }
-                if (nome == null)
-                {
-                    MessageBox.Show("Nome deve ser preenchido!");
-                    return;
-                }
-                string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
 
+                string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
                 if (File.Exists(caminhoArquivo))
                 {
                     string[] linhas = File.ReadAllLines(caminhoArquivo);
-                    foreach (string line in linhas)
+                    foreach (string linha in linhas)
                     {
-                        if (linhas.Contains("Nome Operador: " + nome))
+                        if (linha.Contains("Nome Operador: " + nome))
                         {
                             MessageBox.Show("Operador já cadastrado");
                             return;
@@ -58,6 +69,7 @@ namespace BombaInjetora
 
                 using (StreamWriter writer = new StreamWriter(caminhoArquivo, true))
                 {
+                    writer.WriteLine("Email: " + email);
                     writer.WriteLine("Nome Operador: " + nome);
                     writer.WriteLine("Senha: " + senha);
                     writer.WriteLine("-------------------------------------");
@@ -67,15 +79,12 @@ namespace BombaInjetora
 
                 var login = new Form_Login();
                 login.Show();
-
                 this.Visible = false;
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro ao salvar os dados: " + ex.Message);
             }
-
         }
 
         private void chkboxSenha_CheckedChanged(object sender, EventArgs e)

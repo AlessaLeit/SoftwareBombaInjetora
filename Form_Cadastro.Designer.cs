@@ -41,6 +41,8 @@
             panel2 = new Panel();
             chkboxConfirmarSenha = new CheckBox();
             label2 = new Label();
+            label3 = new Label();
+            txtEmail = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -50,7 +52,7 @@
             btnCadastrar.BackColor = Color.Yellow;
             btnCadastrar.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.WindowText;
-            btnCadastrar.Location = new Point(217, 390);
+            btnCadastrar.Location = new Point(217, 418);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(180, 49);
             btnCadastrar.TabIndex = 22;
@@ -63,7 +65,7 @@
             chkboxSenha.AutoSize = true;
             chkboxSenha.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             chkboxSenha.ForeColor = SystemColors.WindowText;
-            chkboxSenha.Location = new Point(349, 259);
+            chkboxSenha.Location = new Point(348, 309);
             chkboxSenha.Name = "chkboxSenha";
             chkboxSenha.Size = new Size(136, 24);
             chkboxSenha.TabIndex = 18;
@@ -76,7 +78,7 @@
             lbnNomeOperador.AutoSize = true;
             lbnNomeOperador.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbnNomeOperador.ForeColor = SystemColors.ActiveCaptionText;
-            lbnNomeOperador.Location = new Point(114, 121);
+            lbnNomeOperador.Location = new Point(113, 171);
             lbnNomeOperador.Name = "lbnNomeOperador";
             lbnNomeOperador.Size = new Size(173, 23);
             lbnNomeOperador.TabIndex = 17;
@@ -87,7 +89,7 @@
             lbnSenha.AutoSize = true;
             lbnSenha.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbnSenha.ForeColor = SystemColors.ActiveCaptionText;
-            lbnSenha.Location = new Point(114, 193);
+            lbnSenha.Location = new Point(113, 243);
             lbnSenha.Name = "lbnSenha";
             lbnSenha.Size = new Size(71, 23);
             lbnSenha.TabIndex = 16;
@@ -96,7 +98,7 @@
             // txtSenha
             // 
             txtSenha.Font = new Font("Segoe UI", 12F);
-            txtSenha.Location = new Point(114, 219);
+            txtSenha.Location = new Point(113, 269);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(371, 34);
             txtSenha.TabIndex = 15;
@@ -106,7 +108,7 @@
             // 
             txtNomeOperador.CausesValidation = false;
             txtNomeOperador.Font = new Font("Segoe UI", 12F);
-            txtNomeOperador.Location = new Point(114, 147);
+            txtNomeOperador.Location = new Point(113, 197);
             txtNomeOperador.Name = "txtNomeOperador";
             txtNomeOperador.Size = new Size(371, 34);
             txtNomeOperador.TabIndex = 14;
@@ -116,7 +118,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(114, 266);
+            label1.Location = new Point(113, 316);
             label1.Name = "label1";
             label1.Size = new Size(172, 23);
             label1.TabIndex = 24;
@@ -125,7 +127,7 @@
             // txtConfirmarSenha
             // 
             txtConfirmarSenha.Font = new Font("Segoe UI", 12F);
-            txtConfirmarSenha.Location = new Point(114, 292);
+            txtConfirmarSenha.Location = new Point(113, 342);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.Size = new Size(371, 34);
             txtConfirmarSenha.TabIndex = 23;
@@ -155,6 +157,8 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ButtonFace;
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(txtEmail);
             panel2.Controls.Add(chkboxConfirmarSenha);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -167,7 +171,7 @@
             panel2.Controls.Add(txtNomeOperador);
             panel2.Location = new Point(264, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(606, 472);
+            panel2.Size = new Size(606, 496);
             panel2.TabIndex = 27;
             // 
             // chkboxConfirmarSenha
@@ -175,7 +179,7 @@
             chkboxConfirmarSenha.AutoSize = true;
             chkboxConfirmarSenha.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             chkboxConfirmarSenha.ForeColor = SystemColors.WindowText;
-            chkboxConfirmarSenha.Location = new Point(349, 332);
+            chkboxConfirmarSenha.Location = new Point(348, 382);
             chkboxConfirmarSenha.Name = "chkboxConfirmarSenha";
             chkboxConfirmarSenha.Size = new Size(136, 24);
             chkboxConfirmarSenha.TabIndex = 28;
@@ -188,11 +192,31 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(193, 41);
+            label2.Location = new Point(193, 21);
             label2.Name = "label2";
             label2.Size = new Size(204, 49);
             label2.TabIndex = 26;
             label2.Text = "Cadastro";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(113, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 23);
+            label3.TabIndex = 30;
+            label3.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            txtEmail.CausesValidation = false;
+            txtEmail.Font = new Font("Segoe UI", 12F);
+            txtEmail.Location = new Point(113, 122);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(371, 34);
+            txtEmail.TabIndex = 29;
             // 
             // Form_Cadastro
             // 
@@ -226,5 +250,7 @@
         private Panel panel2;
         private Label label2;
         private CheckBox chkboxConfirmarSenha;
+        private Label label3;
+        private TextBox txtEmail;
     }
 }
