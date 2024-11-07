@@ -31,18 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_VisualizarHist));
             panel8 = new Panel();
             panel13 = new Panel();
-            panel9 = new Panel();
-            label1 = new Label();
-            panel14 = new Panel();
-            label18 = new Label();
-            panel10 = new Panel();
-            label3 = new Label();
-            panel11 = new Panel();
-            label5 = new Label();
-            panel15 = new Panel();
-            label22 = new Label();
-            panel16 = new Panel();
-            label26 = new Label();
+            panelHistoricoQuatro = new Panel();
+            panelHistoricoTres = new Panel();
+            panelHistoricoDois = new Panel();
+            panelHistoricoUm = new Panel();
             label2 = new Label();
             panel1 = new Panel();
             btnX = new Button();
@@ -60,12 +52,6 @@
             btnTrocarOperador = new Button();
             panel8.SuspendLayout();
             panel13.SuspendLayout();
-            panel9.SuspendLayout();
-            panel14.SuspendLayout();
-            panel10.SuspendLayout();
-            panel11.SuspendLayout();
-            panel15.SuspendLayout();
-            panel16.SuspendLayout();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel17.SuspendLayout();
@@ -88,136 +74,61 @@
             // panel13
             // 
             panel13.BackColor = SystemColors.ScrollBar;
-            panel13.Controls.Add(panel9);
-            panel13.Controls.Add(panel14);
-            panel13.Controls.Add(panel10);
-            panel13.Controls.Add(panel11);
-            panel13.Controls.Add(panel15);
-            panel13.Controls.Add(panel16);
+            panel13.Controls.Add(panelHistoricoQuatro);
+            panel13.Controls.Add(panelHistoricoTres);
+            panel13.Controls.Add(panelHistoricoDois);
+            panel13.Controls.Add(panelHistoricoUm);
             panel13.Location = new Point(27, 92);
             panel13.Name = "panel13";
             panel13.Size = new Size(624, 347);
             panel13.TabIndex = 31;
             // 
-            // panel9
+            // panelHistoricoQuatro
             // 
-            panel9.BackColor = SystemColors.ButtonHighlight;
-            panel9.Controls.Add(label1);
-            panel9.Location = new Point(427, 183);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(174, 143);
-            panel9.TabIndex = 5;
+            panelHistoricoQuatro.BackColor = SystemColors.ButtonHighlight;
+            panelHistoricoQuatro.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panelHistoricoQuatro.Location = new Point(321, 181);
+            panelHistoricoQuatro.Name = "panelHistoricoQuatro";
+            panelHistoricoQuatro.Size = new Size(279, 143);
+            panelHistoricoQuatro.TabIndex = 3;
             // 
-            // label1
+            // panelHistoricoTres
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(19, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 20);
-            label1.TabIndex = 2;
-            label1.Text = "MODELO";
+            panelHistoricoTres.BackColor = SystemColors.ButtonHighlight;
+            panelHistoricoTres.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panelHistoricoTres.Location = new Point(25, 181);
+            panelHistoricoTres.Name = "panelHistoricoTres";
+            panelHistoricoTres.Size = new Size(279, 143);
+            panelHistoricoTres.TabIndex = 1;
             // 
-            // panel14
+            // panelHistoricoDois
             // 
-            panel14.BackColor = SystemColors.ButtonHighlight;
-            panel14.Controls.Add(label18);
-            panel14.Location = new Point(427, 18);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(174, 143);
-            panel14.TabIndex = 1;
+            panelHistoricoDois.BackColor = SystemColors.ButtonHighlight;
+            panelHistoricoDois.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panelHistoricoDois.Location = new Point(321, 18);
+            panelHistoricoDois.Name = "panelHistoricoDois";
+            panelHistoricoDois.Size = new Size(279, 143);
+            panelHistoricoDois.TabIndex = 1;
             // 
-            // label18
+            // panelHistoricoUm
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(19, 16);
-            label18.Name = "label18";
-            label18.Size = new Size(69, 20);
-            label18.TabIndex = 2;
-            label18.Text = "MODELO";
-            // 
-            // panel10
-            // 
-            panel10.BackColor = SystemColors.ButtonHighlight;
-            panel10.Controls.Add(label3);
-            panel10.Location = new Point(225, 183);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(174, 143);
-            panel10.TabIndex = 4;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(15, 16);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 20);
-            label3.TabIndex = 1;
-            label3.Text = "MODELO";
-            // 
-            // panel11
-            // 
-            panel11.BackColor = SystemColors.ButtonHighlight;
-            panel11.Controls.Add(label5);
-            panel11.Location = new Point(25, 183);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(174, 143);
-            panel11.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(14, 16);
-            label5.Name = "label5";
-            label5.Size = new Size(69, 20);
-            label5.TabIndex = 0;
-            label5.Text = "MODELO";
-            // 
-            // panel15
-            // 
-            panel15.BackColor = SystemColors.ButtonHighlight;
-            panel15.Controls.Add(label22);
-            panel15.Location = new Point(225, 18);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(174, 143);
-            panel15.TabIndex = 1;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(15, 16);
-            label22.Name = "label22";
-            label22.Size = new Size(69, 20);
-            label22.TabIndex = 1;
-            label22.Text = "MODELO";
-            // 
-            // panel16
-            // 
-            panel16.BackColor = SystemColors.ButtonHighlight;
-            panel16.Controls.Add(label26);
-            panel16.Location = new Point(25, 18);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(174, 143);
-            panel16.TabIndex = 0;
-            panel16.Paint += panel16_Paint;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(14, 16);
-            label26.Name = "label26";
-            label26.Size = new Size(69, 20);
-            label26.TabIndex = 0;
-            label26.Text = "MODELO";
+            panelHistoricoUm.BackColor = SystemColors.ButtonHighlight;
+            panelHistoricoUm.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panelHistoricoUm.Location = new Point(25, 18);
+            panelHistoricoUm.Name = "panelHistoricoUm";
+            panelHistoricoUm.Size = new Size(279, 143);
+            panelHistoricoUm.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 20F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(152, 21);
+            label2.Location = new Point(38, 33);
             label2.Name = "label2";
-            label2.Size = new Size(376, 40);
+            label2.Size = new Size(589, 40);
             label2.TabIndex = 27;
-            label2.Text = "Histórico de Relatórios";
+            label2.Text = "Histórico de Relatórios da Máquina";
             // 
             // panel1
             // 
@@ -395,18 +306,6 @@
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel13.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panel17.ResumeLayout(false);
@@ -436,17 +335,9 @@
         private Panel panel7;
         private Button btnTrocarOperador;
         private Panel panel13;
-        private Panel panel14;
-        private Label label18;
-        private Panel panel15;
-        private Label label22;
-        private Panel panel16;
-        private Label label26;
-        private Panel panel9;
-        private Label label1;
-        private Panel panel10;
-        private Label label3;
-        private Panel panel11;
-        private Label label5;
+        private Panel panelHistoricoTres;
+        private Panel panelHistoricoDois;
+        private Panel panelHistoricoUm;
+        private Panel panelHistoricoQuatro;
     }
 }

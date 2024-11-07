@@ -13,7 +13,7 @@ namespace BombaInjetora
     public partial class Form_RealizarDiagnostico : Form
     {
         private List<int> provetasSelecionadas = new List<int>();
-        //private string modeloSelecionado;
+        private string modeloSelecionado;
         private List<string> testesSelecionados = new List<string>();
 
         public Form_RealizarDiagnostico()
@@ -157,33 +157,22 @@ namespace BombaInjetora
         private void SalvarConfiguracaoEmArquivo()
         {
             string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraTestes.txt";
-            using (StreamWriter writer = new StreamWriter(caminhoArquivo, false)) // "false" para sobrescrever o arquivo
+            using (StreamWriter writer = new StreamWriter(caminhoArquivo, true))
             {
+                writer.WriteLine("Modelo Selecionado: " + modeloSelecionado);
                 writer.WriteLine("Testes Selecionados: " + string.Join(", ", testesSelecionados));
                 writer.WriteLine("Provetas Selecionadas: " + string.Join(", ", provetasSelecionadas));
-
+                writer.WriteLine("-----------------------------------------------------------");
             }
 
             MessageBox.Show("Começando testes!");
 
-            if (File.Exists(caminhoArquivo))
-            {
-                string[] linhas = File.ReadAllLines(caminhoArquivo);
-                for (int i = 0; i < linhas.Length; i += 3)
-                {
-                    string linhaTeste = linhas[i];
-                    string linhaProveta = linhas[i + 1];
-                    //string linhaModelo = linhas[i + 2];
-
-                    MessageBox.Show($"Resultado Diagnóstico:\n{linhaTeste}\n{linhaProveta}");
-                    //\n{linhaModelo}
-                }
-            }
-            else
-            {
-                MessageBox.Show("Arquivo não encontrado.");
-            }
+            MessageBox.Show($"Iniciando Diagnóstico! \n" +
+                $"Modelo Selecionado: {modeloSelecionado}\n" +
+                $"Testes Selecionados: {string.Join(", ", testesSelecionados)}\n" +
+                $"Provetas Selecionadas: {string.Join(", ", provetasSelecionadas)}\n");
         }
+
         private void btnIniciarDiag_Click(object sender, EventArgs e)
         {
             SalvarConfiguracaoEmArquivo();
@@ -192,6 +181,15 @@ namespace BombaInjetora
         private void menuModelos_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void menuModelos_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem menuItem)
+            {
+                menuModelos.Text = menuItem.Text;
+                modeloSelecionado = menuModelos.Text;
+            }
         }
     }
 }

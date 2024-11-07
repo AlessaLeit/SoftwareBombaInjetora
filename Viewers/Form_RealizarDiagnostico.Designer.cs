@@ -47,10 +47,29 @@
             panel16 = new Panel();
             menuStrip1 = new MenuStrip();
             menuModelos = new ToolStripMenuItem();
-            boshModelo = new ToolStripMenuItem();
-            delphiModelo = new ToolStripMenuItem();
-            caterpillarModelo = new ToolStripMenuItem();
-            siemensModelo = new ToolStripMenuItem();
+            bOSCHToolStripMenuItem = new ToolStripMenuItem();
+            boschVE075MenuItem = new ToolStripMenuItem();
+            boschAP0261520461MenuItem = new ToolStripMenuItem();
+            boschAP0445010320MenuItem = new ToolStripMenuItem();
+            boschAP0261520216MenuItem = new ToolStripMenuItem();
+            boschAP0445020002MenuItem = new ToolStripMenuItem();
+            dELPHIToolStripMenuItem = new ToolStripMenuItem();
+            delphi8523A700XMenuItem = new ToolStripMenuItem();
+            delphiDP310MenuItem = new ToolStripMenuItem();
+            delphiV8860A080MenuItem = new ToolStripMenuItem();
+            delphiAV3340F401GMenuItem = new ToolStripMenuItem();
+            delphiV3248F850MenuItem = new ToolStripMenuItem();
+            cATERPILLARToolStripMenuItem = new ToolStripMenuItem();
+            caterpillar495071416VoltFuelTransferPumpMenuItem = new ToolStripMenuItem();
+            caterpillar370400812VoltEletricFuelPumpMenuItem = new ToolStripMenuItem();
+            caterpillar3268993PumoFuelInMenuItem = new ToolStripMenuItem();
+            sIEMENSToolStripMenuItem = new ToolStripMenuItem();
+            siemens5WS40019MenuItem = new ToolStripMenuItem();
+            siemensFE073MenuItem = new ToolStripMenuItem();
+            siemens7001106C1EMenuItem = new ToolStripMenuItem();
+            cAVToolStripMenuItem = new ToolStripMenuItem();
+            cavPerkinS6357MenuItem = new ToolStripMenuItem();
+            cavFordF4000MenuItem = new ToolStripMenuItem();
             label3 = new Label();
             panel9 = new Panel();
             panel11 = new Panel();
@@ -78,25 +97,6 @@
             panel6 = new Panel();
             panel7 = new Panel();
             btnTrocarOperador = new Button();
-            VE075Modelo = new ToolStripMenuItem();
-            aLTAPRESSÃO0261520461ToolStripMenuItem = new ToolStripMenuItem();
-            aLTAPRESSÃO0445010320ToolStripMenuItem = new ToolStripMenuItem();
-            aLTAPRESSÃO0261520216ToolStripMenuItem = new ToolStripMenuItem();
-            aLTAPRESSÃO0445020002ToolStripMenuItem = new ToolStripMenuItem();
-            a700XToolStripMenuItem = new ToolStripMenuItem();
-            dP310ToolStripMenuItem = new ToolStripMenuItem();
-            v8860A080ToolStripMenuItem = new ToolStripMenuItem();
-            aV3340F401GToolStripMenuItem = new ToolStripMenuItem();
-            v3248F850ToolStripMenuItem = new ToolStripMenuItem();
-            voltFuelTransferPumpToolStripMenuItem = new ToolStripMenuItem();
-            vOLTELECTRICFUELPUMPToolStripMenuItem = new ToolStripMenuItem();
-            pUMPFUELINToolStripMenuItem = new ToolStripMenuItem();
-            wS40019ToolStripMenuItem = new ToolStripMenuItem();
-            fE073ToolStripMenuItem = new ToolStripMenuItem();
-            c1EToolStripMenuItem = new ToolStripMenuItem();
-            cavModelo = new ToolStripMenuItem();
-            pERKINS6357ToolStripMenuItem = new ToolStripMenuItem();
-            fORDF4000ToolStripMenuItem = new ToolStripMenuItem();
             panel8.SuspendLayout();
             panelTestes.SuspendLayout();
             panel22.SuspendLayout();
@@ -302,38 +302,168 @@
             // 
             // menuModelos
             // 
-            menuModelos.DropDownItems.AddRange(new ToolStripItem[] { boshModelo, delphiModelo, caterpillarModelo, siemensModelo, cavModelo });
+            menuModelos.DropDownItems.AddRange(new ToolStripItem[] { bOSCHToolStripMenuItem, dELPHIToolStripMenuItem, cATERPILLARToolStripMenuItem, sIEMENSToolStripMenuItem, cAVToolStripMenuItem });
             menuModelos.Name = "menuModelos";
             menuModelos.Size = new Size(90, 24);
             menuModelos.Text = "MODELO";
             // 
-            // boshModelo
+            // bOSCHToolStripMenuItem
             // 
-            boshModelo.DropDownItems.AddRange(new ToolStripItem[] { VE075Modelo, aLTAPRESSÃO0261520461ToolStripMenuItem, aLTAPRESSÃO0445010320ToolStripMenuItem, aLTAPRESSÃO0261520216ToolStripMenuItem, aLTAPRESSÃO0445020002ToolStripMenuItem });
-            boshModelo.Name = "boshModelo";
-            boshModelo.Size = new Size(224, 26);
-            boshModelo.Text = "BOSCH";
+            bOSCHToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { boschVE075MenuItem, boschAP0261520461MenuItem, boschAP0445010320MenuItem, boschAP0261520216MenuItem, boschAP0445020002MenuItem });
+            bOSCHToolStripMenuItem.Name = "bOSCHToolStripMenuItem";
+            bOSCHToolStripMenuItem.Size = new Size(224, 26);
+            bOSCHToolStripMenuItem.Text = "BOSCH";
             // 
-            // delphiModelo
+            // boschVE075MenuItem
             // 
-            delphiModelo.DropDownItems.AddRange(new ToolStripItem[] { a700XToolStripMenuItem, dP310ToolStripMenuItem, v8860A080ToolStripMenuItem, aV3340F401GToolStripMenuItem, v3248F850ToolStripMenuItem });
-            delphiModelo.Name = "delphiModelo";
-            delphiModelo.Size = new Size(224, 26);
-            delphiModelo.Text = "DELPHI";
+            boschVE075MenuItem.Name = "boschVE075MenuItem";
+            boschVE075MenuItem.Size = new Size(224, 26);
+            boschVE075MenuItem.Text = "VE 0.75";
+            boschVE075MenuItem.Click += menuModelos_Click;
             // 
-            // caterpillarModelo
+            // boschAP0261520461MenuItem
             // 
-            caterpillarModelo.DropDownItems.AddRange(new ToolStripItem[] { voltFuelTransferPumpToolStripMenuItem, vOLTELECTRICFUELPUMPToolStripMenuItem, pUMPFUELINToolStripMenuItem });
-            caterpillarModelo.Name = "caterpillarModelo";
-            caterpillarModelo.Size = new Size(224, 26);
-            caterpillarModelo.Text = "CATERPILLAR";
+            boschAP0261520461MenuItem.Name = "boschAP0261520461MenuItem";
+            boschAP0261520461MenuItem.Size = new Size(196, 26);
+            boschAP0261520461MenuItem.Text = "AP0261520461";
+            boschAP0261520461MenuItem.Click += menuModelos_Click;
             // 
-            // siemensModelo
+            // boschAP0445010320MenuItem
             // 
-            siemensModelo.DropDownItems.AddRange(new ToolStripItem[] { wS40019ToolStripMenuItem, fE073ToolStripMenuItem, c1EToolStripMenuItem });
-            siemensModelo.Name = "siemensModelo";
-            siemensModelo.Size = new Size(224, 26);
-            siemensModelo.Text = "SIEMENS";
+            boschAP0445010320MenuItem.Name = "boschAP0445010320MenuItem";
+            boschAP0445010320MenuItem.Size = new Size(196, 26);
+            boschAP0445010320MenuItem.Text = "AP0445010320";
+            boschAP0445010320MenuItem.Click += menuModelos_Click;
+            // 
+            // boschAP0261520216MenuItem
+            // 
+            boschAP0261520216MenuItem.Name = "boschAP0261520216MenuItem";
+            boschAP0261520216MenuItem.Size = new Size(196, 26);
+            boschAP0261520216MenuItem.Text = "AP0261520216 ";
+            boschAP0261520216MenuItem.Click += menuModelos_Click;
+            // 
+            // boschAP0445020002MenuItem
+            // 
+            boschAP0445020002MenuItem.Name = "boschAP0445020002MenuItem";
+            boschAP0445020002MenuItem.Size = new Size(196, 26);
+            boschAP0445020002MenuItem.Text = "AP0445020002 ";
+            boschAP0445020002MenuItem.Click += menuModelos_Click;
+            // 
+            // dELPHIToolStripMenuItem
+            // 
+            dELPHIToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { delphi8523A700XMenuItem, delphiDP310MenuItem, delphiV8860A080MenuItem, delphiAV3340F401GMenuItem, delphiV3248F850MenuItem });
+            dELPHIToolStripMenuItem.Name = "dELPHIToolStripMenuItem";
+            dELPHIToolStripMenuItem.Size = new Size(224, 26);
+            dELPHIToolStripMenuItem.Text = "DELPHI";
+            // 
+            // delphi8523A700XMenuItem
+            // 
+            delphi8523A700XMenuItem.Name = "delphi8523A700XMenuItem";
+            delphi8523A700XMenuItem.Size = new Size(190, 26);
+            delphi8523A700XMenuItem.Text = "8523A700X";
+            delphi8523A700XMenuItem.Click += menuModelos_Click;
+            // 
+            // delphiDP310MenuItem
+            // 
+            delphiDP310MenuItem.Name = "delphiDP310MenuItem";
+            delphiDP310MenuItem.Size = new Size(190, 26);
+            delphiDP310MenuItem.Text = "DP310";
+            delphiDP310MenuItem.Click += menuModelos_Click;
+            // 
+            // delphiV8860A080MenuItem
+            // 
+            delphiV8860A080MenuItem.Name = "delphiV8860A080MenuItem";
+            delphiV8860A080MenuItem.Size = new Size(190, 26);
+            delphiV8860A080MenuItem.Text = "V8860A080 ";
+            delphiV8860A080MenuItem.Click += menuModelos_Click;
+            // 
+            // delphiAV3340F401GMenuItem
+            // 
+            delphiAV3340F401GMenuItem.Name = "delphiAV3340F401GMenuItem";
+            delphiAV3340F401GMenuItem.Size = new Size(190, 26);
+            delphiAV3340F401GMenuItem.Text = "AV3340F401G";
+            delphiAV3340F401GMenuItem.Click += menuModelos_Click;
+            // 
+            // delphiV3248F850MenuItem
+            // 
+            delphiV3248F850MenuItem.Name = "delphiV3248F850MenuItem";
+            delphiV3248F850MenuItem.Size = new Size(190, 26);
+            delphiV3248F850MenuItem.Text = "V3248F850";
+            delphiV3248F850MenuItem.Click += menuModelos_Click;
+            // 
+            // cATERPILLARToolStripMenuItem
+            // 
+            cATERPILLARToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { caterpillar495071416VoltFuelTransferPumpMenuItem, caterpillar370400812VoltEletricFuelPumpMenuItem, caterpillar3268993PumoFuelInMenuItem });
+            cATERPILLARToolStripMenuItem.Name = "cATERPILLARToolStripMenuItem";
+            cATERPILLARToolStripMenuItem.Size = new Size(224, 26);
+            cATERPILLARToolStripMenuItem.Text = "CATERPILLAR";
+            // 
+            // caterpillar495071416VoltFuelTransferPumpMenuItem
+            // 
+            caterpillar495071416VoltFuelTransferPumpMenuItem.Name = "caterpillar495071416VoltFuelTransferPumpMenuItem";
+            caterpillar495071416VoltFuelTransferPumpMenuItem.Size = new Size(181, 26);
+            caterpillar495071416VoltFuelTransferPumpMenuItem.Text = "495-0714: 16";
+            caterpillar495071416VoltFuelTransferPumpMenuItem.Click += menuModelos_Click;
+            // 
+            // caterpillar370400812VoltEletricFuelPumpMenuItem
+            // 
+            caterpillar370400812VoltEletricFuelPumpMenuItem.Name = "caterpillar370400812VoltEletricFuelPumpMenuItem";
+            caterpillar370400812VoltEletricFuelPumpMenuItem.Size = new Size(181, 26);
+            caterpillar370400812VoltEletricFuelPumpMenuItem.Text = "370-4008: 12 ";
+            caterpillar370400812VoltEletricFuelPumpMenuItem.Click += menuModelos_Click;
+            // 
+            // caterpillar3268993PumoFuelInMenuItem
+            // 
+            caterpillar3268993PumoFuelInMenuItem.Name = "caterpillar3268993PumoFuelInMenuItem";
+            caterpillar3268993PumoFuelInMenuItem.Size = new Size(181, 26);
+            caterpillar3268993PumoFuelInMenuItem.Text = "326-8993";
+            caterpillar3268993PumoFuelInMenuItem.Click += menuModelos_Click;
+            // 
+            // sIEMENSToolStripMenuItem
+            // 
+            sIEMENSToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { siemens5WS40019MenuItem, siemensFE073MenuItem, siemens7001106C1EMenuItem });
+            sIEMENSToolStripMenuItem.Name = "sIEMENSToolStripMenuItem";
+            sIEMENSToolStripMenuItem.Size = new Size(224, 26);
+            sIEMENSToolStripMenuItem.Text = "SIEMENS";
+            // 
+            // siemens5WS40019MenuItem
+            // 
+            siemens5WS40019MenuItem.Name = "siemens5WS40019MenuItem";
+            siemens5WS40019MenuItem.Size = new Size(176, 26);
+            siemens5WS40019MenuItem.Text = "5WS40019";
+            // 
+            // siemensFE073MenuItem
+            // 
+            siemensFE073MenuItem.Name = "siemensFE073MenuItem";
+            siemensFE073MenuItem.Size = new Size(176, 26);
+            siemensFE073MenuItem.Text = "FE 073";
+            // 
+            // siemens7001106C1EMenuItem
+            // 
+            siemens7001106C1EMenuItem.Name = "siemens7001106C1EMenuItem";
+            siemens7001106C1EMenuItem.Size = new Size(176, 26);
+            siemens7001106C1EMenuItem.Text = "7001106C1E";
+            // 
+            // cAVToolStripMenuItem
+            // 
+            cAVToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cavPerkinS6357MenuItem, cavFordF4000MenuItem });
+            cAVToolStripMenuItem.Name = "cAVToolStripMenuItem";
+            cAVToolStripMenuItem.Size = new Size(224, 26);
+            cAVToolStripMenuItem.Text = "CAV";
+            // 
+            // cavPerkinS6357MenuItem
+            // 
+            cavPerkinS6357MenuItem.Name = "cavPerkinS6357MenuItem";
+            cavPerkinS6357MenuItem.Size = new Size(224, 26);
+            cavPerkinS6357MenuItem.Text = "PERKINS 6357";
+            cavPerkinS6357MenuItem.Click += menuModelos_Click;
+            // 
+            // cavFordF4000MenuItem
+            // 
+            cavFordF4000MenuItem.Name = "cavFordF4000MenuItem";
+            cavFordF4000MenuItem.Size = new Size(224, 26);
+            cavFordF4000MenuItem.Text = "FORD F4000";
+            cavFordF4000MenuItem.Click += menuModelos_Click;
             // 
             // label3
             // 
@@ -627,121 +757,6 @@
             btnTrocarOperador.UseVisualStyleBackColor = false;
             btnTrocarOperador.Click += btnTrocarOperador_Click;
             // 
-            // VE075Modelo
-            // 
-            VE075Modelo.Name = "VE075Modelo";
-            VE075Modelo.Size = new Size(282, 26);
-            VE075Modelo.Text = "VE 0.75";
-            // 
-            // aLTAPRESSÃO0261520461ToolStripMenuItem
-            // 
-            aLTAPRESSÃO0261520461ToolStripMenuItem.Name = "aLTAPRESSÃO0261520461ToolStripMenuItem";
-            aLTAPRESSÃO0261520461ToolStripMenuItem.Size = new Size(282, 26);
-            aLTAPRESSÃO0261520461ToolStripMenuItem.Text = "ALTA PRESSÃO 0261520461";
-            // 
-            // aLTAPRESSÃO0445010320ToolStripMenuItem
-            // 
-            aLTAPRESSÃO0445010320ToolStripMenuItem.Name = "aLTAPRESSÃO0445010320ToolStripMenuItem";
-            aLTAPRESSÃO0445010320ToolStripMenuItem.Size = new Size(282, 26);
-            aLTAPRESSÃO0445010320ToolStripMenuItem.Text = "ALTA PRESSÃO 0445010320";
-            // 
-            // aLTAPRESSÃO0261520216ToolStripMenuItem
-            // 
-            aLTAPRESSÃO0261520216ToolStripMenuItem.Name = "aLTAPRESSÃO0261520216ToolStripMenuItem";
-            aLTAPRESSÃO0261520216ToolStripMenuItem.Size = new Size(282, 26);
-            aLTAPRESSÃO0261520216ToolStripMenuItem.Text = "ALTA PRESSÃO 0261520216 ";
-            // 
-            // aLTAPRESSÃO0445020002ToolStripMenuItem
-            // 
-            aLTAPRESSÃO0445020002ToolStripMenuItem.Name = "aLTAPRESSÃO0445020002ToolStripMenuItem";
-            aLTAPRESSÃO0445020002ToolStripMenuItem.Size = new Size(282, 26);
-            aLTAPRESSÃO0445020002ToolStripMenuItem.Text = "ALTA PRESSÃO 0445020002 ";
-            // 
-            // a700XToolStripMenuItem
-            // 
-            a700XToolStripMenuItem.Name = "a700XToolStripMenuItem";
-            a700XToolStripMenuItem.Size = new Size(224, 26);
-            a700XToolStripMenuItem.Text = "8523A700X";
-            // 
-            // dP310ToolStripMenuItem
-            // 
-            dP310ToolStripMenuItem.Name = "dP310ToolStripMenuItem";
-            dP310ToolStripMenuItem.Size = new Size(224, 26);
-            dP310ToolStripMenuItem.Text = "DP310";
-            // 
-            // v8860A080ToolStripMenuItem
-            // 
-            v8860A080ToolStripMenuItem.Name = "v8860A080ToolStripMenuItem";
-            v8860A080ToolStripMenuItem.Size = new Size(224, 26);
-            v8860A080ToolStripMenuItem.Text = "V8860A080 ";
-            // 
-            // aV3340F401GToolStripMenuItem
-            // 
-            aV3340F401GToolStripMenuItem.Name = "aV3340F401GToolStripMenuItem";
-            aV3340F401GToolStripMenuItem.Size = new Size(224, 26);
-            aV3340F401GToolStripMenuItem.Text = "AV3340F401G";
-            // 
-            // v3248F850ToolStripMenuItem
-            // 
-            v3248F850ToolStripMenuItem.Name = "v3248F850ToolStripMenuItem";
-            v3248F850ToolStripMenuItem.Size = new Size(224, 26);
-            v3248F850ToolStripMenuItem.Text = "V3248F850";
-            // 
-            // voltFuelTransferPumpToolStripMenuItem
-            // 
-            voltFuelTransferPumpToolStripMenuItem.Name = "voltFuelTransferPumpToolStripMenuItem";
-            voltFuelTransferPumpToolStripMenuItem.Size = new Size(380, 26);
-            voltFuelTransferPumpToolStripMenuItem.Text = "495-0714: 16 VOLT FUEL TRANSFERS PUMP";
-            // 
-            // vOLTELECTRICFUELPUMPToolStripMenuItem
-            // 
-            vOLTELECTRICFUELPUMPToolStripMenuItem.Name = "vOLTELECTRICFUELPUMPToolStripMenuItem";
-            vOLTELECTRICFUELPUMPToolStripMenuItem.Size = new Size(380, 26);
-            vOLTELECTRICFUELPUMPToolStripMenuItem.Text = "370-4008: 12 VOLT ELECTRIC FUEL PUMP ";
-            // 
-            // pUMPFUELINToolStripMenuItem
-            // 
-            pUMPFUELINToolStripMenuItem.Name = "pUMPFUELINToolStripMenuItem";
-            pUMPFUELINToolStripMenuItem.Size = new Size(380, 26);
-            pUMPFUELINToolStripMenuItem.Text = "326-8993: PUMP-FUEL IN ";
-            // 
-            // wS40019ToolStripMenuItem
-            // 
-            wS40019ToolStripMenuItem.Name = "wS40019ToolStripMenuItem";
-            wS40019ToolStripMenuItem.Size = new Size(224, 26);
-            wS40019ToolStripMenuItem.Text = "5WS40019";
-            // 
-            // fE073ToolStripMenuItem
-            // 
-            fE073ToolStripMenuItem.Name = "fE073ToolStripMenuItem";
-            fE073ToolStripMenuItem.Size = new Size(224, 26);
-            fE073ToolStripMenuItem.Text = "FE 073";
-            // 
-            // c1EToolStripMenuItem
-            // 
-            c1EToolStripMenuItem.Name = "c1EToolStripMenuItem";
-            c1EToolStripMenuItem.Size = new Size(224, 26);
-            c1EToolStripMenuItem.Text = "7001106C1E";
-            // 
-            // cavModelo
-            // 
-            cavModelo.DropDownItems.AddRange(new ToolStripItem[] { pERKINS6357ToolStripMenuItem, fORDF4000ToolStripMenuItem });
-            cavModelo.Name = "cavModelo";
-            cavModelo.Size = new Size(224, 26);
-            cavModelo.Text = "CAV";
-            // 
-            // pERKINS6357ToolStripMenuItem
-            // 
-            pERKINS6357ToolStripMenuItem.Name = "pERKINS6357ToolStripMenuItem";
-            pERKINS6357ToolStripMenuItem.Size = new Size(224, 26);
-            pERKINS6357ToolStripMenuItem.Text = "PERKINS 6357";
-            // 
-            // fORDF4000ToolStripMenuItem
-            // 
-            fORDF4000ToolStripMenuItem.Name = "fORDF4000ToolStripMenuItem";
-            fORDF4000ToolStripMenuItem.Size = new Size(224, 26);
-            fORDF4000ToolStripMenuItem.Text = "FORD F4000";
-            // 
             // Form_RealizarDiagnostico
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -804,11 +819,6 @@
         private Panel panel10;
         private Panel panel16;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuModelos;
-        private ToolStripMenuItem boshModelo;
-        private ToolStripMenuItem delphiModelo;
-        private ToolStripMenuItem caterpillarModelo;
-        private ToolStripMenuItem siemensModelo;
         private Label label3;
         private Panel panel9;
         private Panel panel11;
@@ -837,24 +847,29 @@
         private Panel panel7;
         private Button btnTrocarOperador;
         private Button btnIniciarDiag;
-        private ToolStripMenuItem VE075Modelo;
-        private ToolStripMenuItem aLTAPRESSÃO0261520461ToolStripMenuItem;
-        private ToolStripMenuItem aLTAPRESSÃO0445010320ToolStripMenuItem;
-        private ToolStripMenuItem aLTAPRESSÃO0261520216ToolStripMenuItem;
-        private ToolStripMenuItem aLTAPRESSÃO0445020002ToolStripMenuItem;
-        private ToolStripMenuItem a700XToolStripMenuItem;
-        private ToolStripMenuItem dP310ToolStripMenuItem;
-        private ToolStripMenuItem v8860A080ToolStripMenuItem;
-        private ToolStripMenuItem aV3340F401GToolStripMenuItem;
-        private ToolStripMenuItem v3248F850ToolStripMenuItem;
-        private ToolStripMenuItem voltFuelTransferPumpToolStripMenuItem;
-        private ToolStripMenuItem vOLTELECTRICFUELPUMPToolStripMenuItem;
-        private ToolStripMenuItem pUMPFUELINToolStripMenuItem;
-        private ToolStripMenuItem wS40019ToolStripMenuItem;
-        private ToolStripMenuItem fE073ToolStripMenuItem;
-        private ToolStripMenuItem c1EToolStripMenuItem;
-        private ToolStripMenuItem cavModelo;
-        private ToolStripMenuItem pERKINS6357ToolStripMenuItem;
-        private ToolStripMenuItem fORDF4000ToolStripMenuItem;
+        private ToolStripMenuItem menuModelos;
+        private ToolStripMenuItem bOSCHToolStripMenuItem;
+        private ToolStripMenuItem boschVE075MenuItem;
+        private ToolStripMenuItem boschAP0261520461MenuItem;
+        private ToolStripMenuItem boschAP0445010320MenuItem;
+        private ToolStripMenuItem boschAP0261520216MenuItem;
+        private ToolStripMenuItem boschAP0445020002MenuItem;
+        private ToolStripMenuItem dELPHIToolStripMenuItem;
+        private ToolStripMenuItem delphi8523A700XMenuItem;
+        private ToolStripMenuItem delphiDP310MenuItem;
+        private ToolStripMenuItem delphiV8860A080MenuItem;
+        private ToolStripMenuItem delphiAV3340F401GMenuItem;
+        private ToolStripMenuItem delphiV3248F850MenuItem;
+        private ToolStripMenuItem cATERPILLARToolStripMenuItem;
+        private ToolStripMenuItem caterpillar495071416VoltFuelTransferPumpMenuItem;
+        private ToolStripMenuItem caterpillar370400812VoltEletricFuelPumpMenuItem;
+        private ToolStripMenuItem caterpillar3268993PumoFuelInMenuItem;
+        private ToolStripMenuItem sIEMENSToolStripMenuItem;
+        private ToolStripMenuItem siemens5WS40019MenuItem;
+        private ToolStripMenuItem siemensFE073MenuItem;
+        private ToolStripMenuItem siemens7001106C1EMenuItem;
+        private ToolStripMenuItem cAVToolStripMenuItem;
+        private ToolStripMenuItem cavPerkinS6357MenuItem;
+        private ToolStripMenuItem cavFordF4000MenuItem;
     }
 }

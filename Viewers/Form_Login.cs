@@ -13,6 +13,7 @@ namespace BombaInjetora
             CarregarOperadoresRecentes();
         
         }
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
@@ -48,7 +49,7 @@ namespace BombaInjetora
                         panelOperadoresRecentes.Controls.Add(txtOperador);
                         count++;
 
-                        if (count >= 6) break; // Limita a exibição a 4 operadores
+                        if (count >= 6) break; 
                     }
                 }
             }
@@ -58,7 +59,7 @@ namespace BombaInjetora
             }
         }
         
-            private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -111,6 +112,7 @@ namespace BombaInjetora
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             var cadastro = new Form_Cadastro();
@@ -118,6 +120,7 @@ namespace BombaInjetora
 
             this.Visible = false;
         }
+
         private void chkSenha_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSenha.Checked)

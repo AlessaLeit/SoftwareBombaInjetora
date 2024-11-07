@@ -178,7 +178,7 @@ namespace BombaInjetora
                         cp = 0;
                         break;
                 }
-                txtBoxCp.Text = cp.ToString();
+                txtBoxCp.Text = cp.ToString("F2");
             }
             else
             {
@@ -206,10 +206,29 @@ namespace BombaInjetora
                 }
             }
         }
-        
+
+        public bool on = false;
         private void btnInciarDiag_Click(object sender, EventArgs e)
         {
+            on = !on;
+            mudarCorTeste();
             
+        }
+
+        private void mudarCorTeste()
+        {
+            Button botao = btnTesteONOFF;
+
+            if (on)
+            {
+                botao.BackColor = Color.Green;
+                btnIniciarDiag.Text = "Parar";
+            }
+            else
+            {
+                botao.BackColor = Color.Red;
+                btnIniciarDiag.Text = "Iniciar";
+            }
         }
 
         private void btnX_Click(object sender, EventArgs e)
@@ -234,6 +253,15 @@ namespace BombaInjetora
         }
 
         private void menuModelo_Click(object sender, EventArgs e)
+        {
+
+            if (sender is ToolStripMenuItem menuItem)
+            {
+                menuModelos.Text = menuItem.Text;
+            }
+        }
+
+        private void btnIniciarDiag_TextChanged(object sender, EventArgs e)
         {
 
         }

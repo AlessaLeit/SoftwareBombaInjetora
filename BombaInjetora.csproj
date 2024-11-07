@@ -9,13 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BombaInjetoraInterface\bin\" />
-    <Folder Include="BombaInjetoraInterface\Resource\" />
-    <Folder Include="BombaInjetoraLib\bin\" />
-    <Folder Include="BombaInjetoraLib\Resource\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
