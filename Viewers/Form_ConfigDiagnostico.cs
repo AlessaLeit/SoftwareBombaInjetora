@@ -7,19 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BombaInjetora;
+using BombaInjetora.Controller;
+using BombaInjetora.Models;
 using static BombaInjetora.SessaoOperadorcs;
 
 namespace BombaInjetora
 {
     public partial class Form_ConfigDiagnostico : Form
     {
+        public Form_State formState;
+        private State currentState;
         public Form_ConfigDiagnostico()
         {
             InitializeComponent();
-            string nomeOperador = SessaoOperador.Instancia.NomeOperador;
-            string emailOperador = SessaoOperador.Instancia.EmailOperador;
+            // Compartilha pra futuramente incrementar no relatório por quem foi feito
+            string nomeOperador = SessaoOperador.Instancia.NomeOperador; 
+            SetState(new DesligarTesteState());
         }
-
+        // Alteração do Design Patters State
+        public void SetState(State newState)
+        {
+            currentState = newState;
+            currentState.Handle(this);
+            btnIniciarDiag.Text = currentState.ProximoEstadoTexto;
+        }
         private void btnInicio_Click(object sender, EventArgs e)
         {
             var menu = new Form_Home();
@@ -27,7 +39,7 @@ namespace BombaInjetora
 
             this.Visible = false;
         }
-
+        // Todos os botões do diagnóstico seguem a mesma lógica
         private void btnTempoPulso_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtBoxTempoPulso.Text, out int tp))
@@ -185,7 +197,8 @@ namespace BombaInjetora
                 MessageBox.Show("Valor inválido no campo. Insira um número.");
             }
         }
-
+        
+        // Provetas seguem a mesma lógica do outro tipo de diagnósitco
         private void btnProvetas_Click(object sender, EventArgs e)
         {
             Button botao = sender as Button;
@@ -207,30 +220,22 @@ namespace BombaInjetora
             }
         }
 
-        public bool on = false;
+        // Ao iniciar vai ser colocado em prática o design patter state
         private void btnInciarDiag_Click(object sender, EventArgs e)
         {
-            on = !on;
-            mudarCorTeste();
-            
-        }
-
-        private void mudarCorTeste()
-        {
-            Button botao = btnTesteONOFF;
-
-            if (on)
+            if (currentState is IniciarTesteState)
             {
-                botao.BackColor = Color.Green;
-                btnIniciarDiag.Text = "Parar";
+                SetState(new ExecutandoTesteState());
             }
-            else
+            else if (currentState is ExecutandoTesteState)
             {
-                botao.BackColor = Color.Red;
-                btnIniciarDiag.Text = "Iniciar";
+                SetState(new DesligarTesteState());
+            }
+            else if (currentState is DesligarTesteState)
+            {
+                SetState(new IniciarTesteState());
             }
         }
-
         private void btnX_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -251,7 +256,7 @@ namespace BombaInjetora
 
             this.Visible = false;
         }
-
+        // Salvar o modelo escolhido
         private void menuModelo_Click(object sender, EventArgs e)
         {
 
@@ -261,9 +266,5 @@ namespace BombaInjetora
             }
         }
 
-        private void btnIniciarDiag_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

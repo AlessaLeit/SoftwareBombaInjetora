@@ -42,6 +42,7 @@
             label4 = new Label();
             panel3 = new Panel();
             panelOperadoresRecentes = new FlowLayoutPanel();
+            btnEditar = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -94,7 +95,7 @@
             btnLogin.BackColor = Color.Yellow;
             btnLogin.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.WindowText;
-            btnLogin.Location = new Point(295, 429);
+            btnLogin.Location = new Point(295, 418);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(177, 49);
             btnLogin.TabIndex = 10;
@@ -107,7 +108,7 @@
             btnCadastrar.BackColor = Color.Yellow;
             btnCadastrar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = SystemColors.WindowText;
-            btnCadastrar.Location = new Point(71, 429);
+            btnCadastrar.Location = new Point(71, 418);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(177, 49);
             btnCadastrar.TabIndex = 11;
@@ -162,6 +163,7 @@
             // 
             panel2.BackColor = SystemColors.ButtonFace;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(btnEditar);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(btnCadastrar);
             panel2.Controls.Add(label1);
@@ -207,6 +209,19 @@
             panelOperadoresRecentes.Size = new Size(392, 303);
             panelOperadoresRecentes.TabIndex = 17;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.Yellow;
+            btnEditar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditar.ForeColor = SystemColors.WindowText;
+            btnEditar.Location = new Point(356, 202);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(106, 28);
+            btnEditar.TabIndex = 18;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // Form_Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -244,5 +259,6 @@
         private Panel panel3;
         private Label label4;
         private FlowLayoutPanel panelOperadoresRecentes;
+        private Button btnEditar;
     }
 }

@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BombaInjetora.Controller;
+using BombaInjetora.Models;
 
 namespace BombaInjetora
 {
     public partial class Form_RealizarDiagnostico : Form
     {
-        private List<int> provetasSelecionadas = new List<int>();
-        private string modeloSelecionado;
-        private List<string> testesSelecionados = new List<string>();
-
+        private Relatorio relatorio;
+        private RelatorioController relatorioController;
         public Form_RealizarDiagnostico()
         {
             InitializeComponent();
+            relatorio = new Relatorio();
+            relatorioController = new RelatorioController();
         }
 
         private void btnTestes_Click(object sender, EventArgs e)
@@ -32,43 +34,17 @@ namespace BombaInjetora
                     if (botao.BackColor == Color.Green)
                     {
                         botao.BackColor = SystemColors.ButtonFace;
-                        RemoverTeste(teste, botao.Name);
+                        relatorioController.RemoverTeste(teste, botao.Name, relatorio);
                     }
                     else
                     {
                         botao.BackColor = Color.Green;
-                        AdicionarTeste(teste, botao.Name);
+                        relatorioController.AdicionarTeste(teste, botao.Name, relatorio);
                     }
                 }
             }
         }
-        private void AdicionarTeste(string teste, string buttonName)
-        {
-            switch (buttonName)
-            {
-                case "btnEstanqueidade":
-                case "btnPreInjecao":
-                case "btnMarchaLenta":
-                case "btnEmissoes":
-                case "btnPlenaCarga":
-                    testesSelecionados.Add(teste);
-                    break;
-            }
-        }
 
-        private void RemoverTeste(string teste, string buttonName)
-        {
-            switch (buttonName)
-            {
-                case "btnEstanqueidade":
-                case "btnPreInjecao":
-                case "btnMarchaLenta":
-                case "btnEmissoes":
-                case "btnPlenaCarga":
-                    testesSelecionados.Remove(teste);
-                    break;
-            }
-        }
         private void btnX_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -118,64 +94,31 @@ namespace BombaInjetora
                     if (botao.BackColor == Color.Green)
                     {
                         botao.BackColor = SystemColors.Control;
-                        RemoverProveta(proveta, botao.Name);
+                        relatorioController.RemoverProveta(proveta, botao.Name, relatorio);
                     }
                     else
                     {
                         botao.BackColor = Color.Green;
-                        AdicionarProveta(proveta, botao.Name);
+                        relatorioController.AdicionarProveta(proveta, botao.Name, relatorio);
                     }
                 }
             }
         }
-        private void AdicionarProveta(int proveta, string buttonName)
-        {
-            switch (buttonName)
-            {
-                case "btnUm":
-                case "btnDois":
-                case "btnTres":
-                case "btnQuatro":
-                    provetasSelecionadas.Add(proveta);
-                    break;
-            }
-        }
-
-        private void RemoverProveta(int proveta, string buttonName)
-        {
-            switch (buttonName)
-            {
-                case "btnUm":
-                case "btnDois":
-                case "btnTres":
-                case "btnQuatro":
-                    provetasSelecionadas.Remove(proveta);
-                    break;
-            }
-        }
-
-        private void SalvarConfiguracaoEmArquivo()
-        {
-            string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraTestes.txt";
-            using (StreamWriter writer = new StreamWriter(caminhoArquivo, true))
-            {
-                writer.WriteLine("Modelo Selecionado: " + modeloSelecionado);
-                writer.WriteLine("Testes Selecionados: " + string.Join(", ", testesSelecionados));
-                writer.WriteLine("Provetas Selecionadas: " + string.Join(", ", provetasSelecionadas));
-                writer.WriteLine("-----------------------------------------------------------");
-            }
-
-            MessageBox.Show("Começando testes!");
-
-            MessageBox.Show($"Iniciando Diagnóstico! \n" +
-                $"Modelo Selecionado: {modeloSelecionado}\n" +
-                $"Testes Selecionados: {string.Join(", ", testesSelecionados)}\n" +
-                $"Provetas Selecionadas: {string.Join(", ", provetasSelecionadas)}\n");
-        }
-
+        
         private void btnIniciarDiag_Click(object sender, EventArgs e)
         {
-            SalvarConfiguracaoEmArquivo();
+            if (string.IsNullOrEmpty(relatorio.modeloSelecionado) ||
+             relatorio.testesSelecionados == null ||
+             relatorio.testesSelecionados.Count == 0 ||
+             relatorio.provetasSelecionadas == null ||
+             relatorio.provetasSelecionadas.Count == 0)
+            {
+                MessageBox.Show("Dados inseridos são insuficientes, Tente novamente");
+            }
+            else
+            {
+                relatorioController.SalvarConfiguracaoEmArquivo(relatorio);
+            }
         }
 
         private void menuModelos_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -188,7 +131,7 @@ namespace BombaInjetora
             if (sender is ToolStripMenuItem menuItem)
             {
                 menuModelos.Text = menuItem.Text;
-                modeloSelecionado = menuModelos.Text;
+                relatorio.modeloSelecionado = menuModelos.Text;
             }
         }
     }

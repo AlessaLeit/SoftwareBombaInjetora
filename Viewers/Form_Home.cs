@@ -16,8 +16,8 @@ namespace BombaInjetora
         public Form_Home()
         {
             InitializeComponent();
+            // Aqui implementa o Singleton usando o nome do operador
             string nomeOperador = SessaoOperador.Instancia.NomeOperador;
-            string emailOperador = SessaoOperador.Instancia.EmailOperador;
             string primeiroNome = nomeOperador.Split(' ')[0];
             txtBemVindoOperador.Text = $"Bem-vindo, {primeiroNome}!";
         }

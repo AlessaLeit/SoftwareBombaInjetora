@@ -8,9 +8,17 @@ namespace BombaInjetora.Models
 {
     public class Relatorio
     {
-        public int Id { get; set; }
-        public string Modelo { get; set; }
-        public string Testes { get; set; }
-        public string Provetas { get; set; }
+        public int id { get; set; }  
+        public string modeloSelecionado { get; set; }
+        public List<string> testesSelecionados { get; set; }
+        public List<int> provetasSelecionadas { get; set; }
+
+        public Relatorio()
+        {
+            testesSelecionados = new List<string>();
+            provetasSelecionadas = new List<int>();
+        }
     }
+
+
 }

@@ -6,20 +6,19 @@ namespace BombaInjetora
 {
     public partial class Form_Login : Form
     {
-        
+
         public Form_Login()
         {
             InitializeComponent();
             CarregarOperadoresRecentes();
-        
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void CarregarOperadoresRecentes() 
+        // Método para carregar e exibir os operadores mais recentes no painel
+        private void CarregarOperadoresRecentes()
         {
             string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
             if (File.Exists(caminhoArquivo))
@@ -27,9 +26,10 @@ namespace BombaInjetora
                 string[] linhas = File.ReadAllLines(caminhoArquivo);
                 panelOperadoresRecentes.Controls.Clear();
 
-                int count = 0;
+                int count = 0; // Contador para limitar a exibição a até 6 operadores recentes
                 for (int i = 0; i < linhas.Length; i++)
-                {
+                {   
+                    // Criação dos nomes já cadastrados no panel
                     if (linhas[i].StartsWith("Nome Operador:"))
                     {
                         string linhaNome = linhas[i].Replace("Nome Operador: ", "").Trim();
@@ -49,7 +49,7 @@ namespace BombaInjetora
                         panelOperadoresRecentes.Controls.Add(txtOperador);
                         count++;
 
-                        if (count >= 6) break; 
+                        if (count >= 6) break;
                     }
                 }
             }
@@ -58,40 +58,36 @@ namespace BombaInjetora
                 MessageBox.Show("Nenhum cadastro encontrado.");
             }
         }
-        
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 string nome = txtNomeOperador.Text;
                 string senha = txtSenha.Text;
-                
+
                 string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraOperadores.txt";
 
                 if (File.Exists(caminhoArquivo))
                 {
                     string[] linhas = File.ReadAllLines(caminhoArquivo);
                     bool loginValido = false;
-                    string email = string.Empty;
 
-                    for (int i = 0; i < linhas.Length; i += 4)
+                    for (int i = 0; i < linhas.Length; i += 3)
                     {
-                        string linhaNome = linhas[i + 1].Replace("Nome Operador: ", "").Trim(); 
-                        string linhaSenha = linhas[i + 2].Replace("Senha: ", "").Trim();
-                        string linhaEmail = linhas[i].Replace("Email: ", "").Trim();
+                        string linhaNome = linhas[i].Replace("Nome Operador: ", "").Trim();
+                        string linhaSenha = linhas[i + 1].Replace("Senha: ", "").Trim();
 
                         if (linhaNome == nome && linhaSenha == senha)
                         {
                             loginValido = true;
-                            email = linhaEmail;
                             break;
                         }
                     }
-                    
+
                     if (loginValido)
                     {
-                        SessaoOperador.Instancia.NomeOperador = nome;
-                        SessaoOperador.Instancia.EmailOperador = email;
+                        SessaoOperador.Instancia.NomeOperador = nome; // Armazena o nome do operador na sessão
                         var menu = new Form_Home();
                         menu.Show();
 
@@ -139,5 +135,12 @@ namespace BombaInjetora
             this.Close();
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var editar = new Form_Editar();
+            editar.Show();
+
+            this.Visible = false;
+        }
     }
 }

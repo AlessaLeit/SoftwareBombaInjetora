@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConfigDiagnostico));
             panel8 = new Panel();
-            panel3 = new Panel();
-            btnTesteONOFF = new Button();
-            label10 = new Label();
             btnIniciarDiag = new Button();
             panel20 = new Panel();
             btnControlMenosZeroUm = new Button();
@@ -119,7 +116,6 @@
             panel7 = new Panel();
             btnTrocarOperador = new Button();
             panel8.SuspendLayout();
-            panel3.SuspendLayout();
             panel20.SuspendLayout();
             panel19.SuspendLayout();
             panel18.SuspendLayout();
@@ -145,7 +141,6 @@
             // panel8
             // 
             panel8.BackColor = SystemColors.ButtonFace;
-            panel8.Controls.Add(panel3);
             panel8.Controls.Add(btnIniciarDiag);
             panel8.Controls.Add(panel20);
             panel8.Controls.Add(panel19);
@@ -158,36 +153,6 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(673, 484);
             panel8.TabIndex = 22;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ScrollBar;
-            panel3.Controls.Add(btnTesteONOFF);
-            panel3.Controls.Add(label10);
-            panel3.Location = new Point(448, 402);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(164, 51);
-            panel3.TabIndex = 35;
-            // 
-            // btnTesteONOFF
-            // 
-            btnTesteONOFF.BackColor = Color.Red;
-            btnTesteONOFF.Location = new Point(90, 8);
-            btnTesteONOFF.Name = "btnTesteONOFF";
-            btnTesteONOFF.Size = new Size(63, 37);
-            btnTesteONOFF.TabIndex = 28;
-            btnTesteONOFF.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(19, 13);
-            label10.Name = "label10";
-            label10.Size = new Size(59, 23);
-            label10.TabIndex = 27;
-            label10.Text = "Teste";
             // 
             // btnIniciarDiag
             // 
@@ -1040,8 +1005,6 @@
             Text = "Form_ConfigDiagnostico";
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel20.ResumeLayout(false);
             panel20.PerformLayout();
             panel19.ResumeLayout(false);
@@ -1161,8 +1124,5 @@
         private ToolStripMenuItem cAVToolStripMenuItem;
         private ToolStripMenuItem cavPerkinS6357MenuItem;
         private ToolStripMenuItem cavFordF4000MenuItem;
-        private Panel panel3;
-        private Button btnTesteONOFF;
-        private Label label10;
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BombaInjetora
 {
+    // Vai ser usado futuramente também para implementação nos relatórios
     internal class SessaoOperadorcs
     {
         public class SessaoOperador
@@ -13,7 +14,6 @@ namespace BombaInjetora
             private static SessaoOperador instancia;
 
             public string NomeOperador { get; set; }
-            public string EmailOperador { get; set; }
 
             private SessaoOperador() { }
 

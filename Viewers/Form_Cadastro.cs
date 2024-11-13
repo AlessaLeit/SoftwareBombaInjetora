@@ -23,23 +23,9 @@ namespace BombaInjetora
         {
             try
             {
-                string email = txtEmail.Text;
                 string nome = txtNomeOperador.Text;
                 string senha = txtSenha.Text;
                 string confirmarSenha = txtConfirmarSenha.Text;
-
-                // Verificação de email
-                bool VerificarEmail(string email)
-                {
-                    string padrao = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-                    return Regex.IsMatch(email, padrao);
-                }
-
-                if (!VerificarEmail(email))
-                {
-                    MessageBox.Show("Email inválido. Tente novamente.");
-                    return;
-                }
 
                 if (senha != confirmarSenha)
                 {
@@ -47,7 +33,7 @@ namespace BombaInjetora
                     return;
                 }
 
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
+                if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmarSenha))
                 {
                     MessageBox.Show("Todos os campos devem ser preenchidos!");
                     return;
@@ -66,10 +52,9 @@ namespace BombaInjetora
                         }
                     }
                 }
-
+                // Escreve os dados do operador no arquivo
                 using (StreamWriter writer = new StreamWriter(caminhoArquivo, true))
                 {
-                    writer.WriteLine("Email: " + email);
                     writer.WriteLine("Nome Operador: " + nome);
                     writer.WriteLine("Senha: " + senha);
                     writer.WriteLine("-------------------------------------");

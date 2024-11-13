@@ -18,7 +18,7 @@ namespace BombaInjetora
         {
             InitializeComponent();
             string nomeOperador = SessaoOperador.Instancia.NomeOperador;
-            string emailOperador = SessaoOperador.Instancia.EmailOperador;
+            // Inicializa o array de painéis com os painéis do histórico
             panels = new Panel[] { panelHistoricoUm, panelHistoricoDois, panelHistoricoTres, panelHistoricoQuatro };
             CarregarHistorico();
         }
@@ -63,31 +63,69 @@ namespace BombaInjetora
         private void CarregarHistorico()
         {
             string caminhoArquivo = @"C:\Users\Aless\OneDrive\Documentos\Programação\Faculdade\Adrian_POO\Projetos\BombaInjetoraTestes.txt";
+
             if (File.Exists(caminhoArquivo))
             {
-                string[] diagnostico = File.ReadAllText(caminhoArquivo).Split(new[] { "-----------------------------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
-                // CRIAR ID DE DIAGNOSTICO PRA CONSEGUIR LOCALIZAR OS ULTIMOS DIAGNOSTICOS
-                for (int i = 0; i < panels.Length && i < diagnostico.Length; i++)
+                // Lê o conteúdo do arquivo e separa os diagnósticos
+                string[] diagnosticos = File.ReadAllText(caminhoArquivo).Split(new[] { "-----------------------------------------------------------" }, StringSplitOptions.RemoveEmptyEntries);
+                List<(int id, string diagnostico)> listaDiagnosticos = new List<(int, string)>();
+                foreach (var diagnostico in diagnosticos)
                 {
-                    Label label = new Label
-                    {
-                        Text = diagnostico[i].Trim(),
-                        Size = panels[i].Size,
-                        AutoSize = false,
-                        TextAlign = ContentAlignment.TopLeft,
-                        Dock = DockStyle.Fill,
-                        Padding = new Padding(5),
-                        AutoEllipsis = true
-                    };
+                    var linhas = diagnostico.Split('\n');
+                    int id = 0;
 
-                    panels[i].Controls.Clear();
-                    panels[i].Controls.Add(label);
+                    foreach (var linha in linhas)
+                    {
+                        if (linha.StartsWith("ID do Relatório:"))
+                        {
+                            id = int.Parse(linha.Split(':')[1].Trim());  
+                            break;
+                        }
+                    }
+
+                    listaDiagnosticos.Add((id, diagnostico));
+                }
+                // Ordena a lista de diagnósticos pelo ID em ordem decrescente
+                listaDiagnosticos.Sort((a, b) => b.id.CompareTo(a.id));
+
+                int count = 0;
+                foreach (var diagnostico in listaDiagnosticos)
+                {
+                    if (count >= 4)  
+                        break;
+
+                    if (count < panels.Length)  
+                    {
+                        var diagnosticoText = diagnostico.diagnostico;
+                        // Cria um novo label para exibir o texto do diagnóstico
+                        Label label = new Label
+                        {
+                            Text = diagnosticoText.Trim(),
+                            Size = panels[count].Size,
+                            AutoSize = false,
+                            TextAlign = ContentAlignment.TopLeft,
+                            Dock = DockStyle.Fill,
+                            Padding = new Padding(5),
+                            AutoEllipsis = true
+                        };
+
+                        panels[count].Controls.Clear();
+                        panels[count].Controls.Add(label);
+
+                        count++;
+                    }
+                }
+
+                if (count == 0)
+                {
+                    MessageBox.Show("Nenhum diagnóstico encontrado.");
                 }
             }
             else
             {
                 MessageBox.Show("Nenhum histórico encontrado.");
             }
+
         }
     }
 }
