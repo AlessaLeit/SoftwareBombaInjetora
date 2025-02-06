@@ -36,9 +36,15 @@ rápidas e eficazes, evitando problemas maiores nos sistemas de injeção. A cap
 gerar históricos detalhados também permitirá uma abordagem mais preditiva, ajudando a
 identificar padrões de falha e realizar manutenção preventiva, reduzindo custos e
 aumentando a confiança dos clientes no serviço prestado.</p>
+<h2>Apresentação do Software:</h2>
+
+[Software.pptx](https://github.com/user-attachments/files/18698638/software.pptx)
+
+
 <h2>Diagrama e Fluxograma:</h2>
 
 ![Diagrama de Casos de Uso](https://github.com/user-attachments/assets/e33cd061-1632-4fb6-a759-d347bdb5f9cf)
 ![Fluxograma:](https://github.com/user-attachments/assets/a275ec9a-8ac4-4f53-8f7c-75f1df4ece0b)
+
 
 
